@@ -1,7 +1,6 @@
 <div
   class="page-width"
   <div
-  style="max-width: 70%;"
 >
   <div class="login-page h4 center common-padding">Login Page</div>
   {% if customer %}
@@ -36,6 +35,11 @@
 </div>
 
 {% style %}
+  @media only screen and (min-width: 990px) {
+      .login-page {
+        max-width: 60%;
+      }
+  }
   .container input[type=email], .container input[type=password] {
     width: 100%;
     padding: 12px 20px;
