@@ -1,5 +1,5 @@
 <div class="page-width">
-  <div class="center register__wrapper">
+  <div class="register__wrapper">
   {% if customer %}
     <div class="login-page h4 center common-padding">Register Page</div>
     <div class="h6 center common-padding">You are already Logged In!!!</div>
@@ -9,6 +9,7 @@
     {{ form.errors | default_errors }}
     
     <div class="container">
+      <div>
       <h1>Register</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
@@ -33,6 +34,7 @@
 
     <div class="container signin common-padding">
       <p>Already have an account? <a class="button button--primary" href="{{ routes.account_login_url }}">Sign in</a>.</p>
+    </div>
     </div>
   {% endform %}
   {% endif %}
