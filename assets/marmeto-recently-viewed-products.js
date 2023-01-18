@@ -85,4 +85,4 @@ marmeto.RecentlyViewedProducts = (function() {
   return RecentlyViewedProducts;
 })();
 
-new marmeto.RecentlyViewedProducts('mm-recently-viewed-products');
+new marmeto.RecentlyViewedProducts('mm-recently-viewed-products'); 
