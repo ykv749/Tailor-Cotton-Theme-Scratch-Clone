@@ -100,11 +100,9 @@
         "title": "Upsell Products"
       }
     },
-    "5e9b570b-e112-434b-9d45-7d28bdc7c85c": {
+    "recently-viewed-products": {
       "type": "marmeto-recently-viewed-products",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36,
         "title": "Recently viewed"
       }
     }
@@ -113,6 +111,6 @@
     "main",
     "product-recommendations",
     "product-upsell",
-    "5e9b570b-e112-434b-9d45-7d28bdc7c85c"
+    "recently-viewed-products"
   ]
 }
