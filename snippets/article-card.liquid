@@ -1,0 +1,28 @@
+{{ 'snippet-article-card.css' | asset_url | stylesheet_tag }}
+
+<div class="article-card blog-margin">
+  <div class="blog-margin">
+    <a href="{{ article.url }}" class="article-card__link">
+      {% render 'image', class: 'media media--square', mobileSrc: article.image, desktopSrc: article.image %}
+    </a>
+  </div>
+
+  <div class="center article-card__info blog-margin">
+    <div class="common-padding h5">{{ article.title }}</div>
+    <!--
+      <div class="common-padding article-card__info--description">
+        {{ article.excerpt | truncate: 150 }}
+      </div>
+    -->
+
+    <div class="article-card__date common-padding">
+      {{ article.published_at | date: '%B %d, %Y' }}
+    </div>
+
+    <div class="common-padding">
+      <a href="{{ article.url }}" class="tn clrbl button button--primary article-card__readmore blog-margin"
+        >Read more</a
+      >
+    </div>
+  </div>
+</div>

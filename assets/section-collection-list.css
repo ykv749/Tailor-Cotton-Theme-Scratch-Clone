@@ -1,0 +1,24 @@
+.featured-collection__main-content {
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.featured-collection__subheading {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .featured-collection__main-content {
+    flex-direction: row;
+  }
+  .collection-list__view-all {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .featured-collection__subheading {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

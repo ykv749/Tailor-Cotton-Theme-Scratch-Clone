@@ -1,0 +1,196 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.blocks.size > 0 %}
+  <div
+    class="section-{{ section.id }}-padding image-gallery flex flex-wrap carousel--{{ section.id }}"
+    {% if section.settings.mobile_slider %}
+      data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": true, "prevNextButtons": false, "imagesLoaded": true, "watchCSS": true }'
+    {% endif %}
+  >
+    {% for block in section.blocks %}
+      {% if block.settings.image_desktop != blank and block.settings.image_mobile != blank %}
+        <div class="image-gallery__item flex__item">
+          <div class="image-gallery__image-item">
+            {% render 'image',
+              class: 'media media--square media--animated',
+              mobileSrc: block.settings.image_mobile,
+              desktopSrc: block.settings.image_desktop
+            %}
+          </div>
+
+          {% if block.settings.heading_text != blank
+            or block.settings.subheading_text != blank
+            or block.settings.btn_text != blank
+          %}
+            <div class="center image-gallery__text-item">
+              {% if block.settings.heading_text != blank %}
+                <div class="h1 image-gallery__item__heading">
+                  {{ block.settings.heading_text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.subheading_text != blank %}
+                <div class="item__subheading_text">
+                  {{ block.settings.subheading_text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.btn_text != blank %}
+                <a class="button button--primary" href="{{ block.settings.btn_link }}">{{ block.settings.btn_text }}</a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% style %}
+  .image-gallery__item {
+    position: relative;    
+  }
+
+  .image-gallery .flex__item {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 990px) {
+    .image-gallery .flex__item {
+      width: 50%;
+    }
+
+    .image-gallery__item:hover .media--animated img {
+      transform: scale(1.075);
+    }
+  }
+
+  .image-gallery__text-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-gallery__item__heading {
+      color: #ffffff;
+      font-size: 5rem;
+      font-weight: 500;
+      margin: 3rem;
+    }
+
+  /* disable Flickity for large devices */
+    .carousel--{{ section.id }}:after {
+      content: '';
+    }
+  @media screen and ( max-width: 768px ) {
+    .carousel--{{ section.id }} {
+    display: block;
+  }
+
+  .carousel--{{ section.id }}:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+  }
+
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Image Gallery",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 36
+      },
+    {
+      "type": "color",
+      "id": "bgr",
+      "label": "Background Color",
+      "default": "#EFEDE5"
+    },{
+      "type": "checkbox",
+      "id": "mobile_slider",
+      "label": "Show Mobile Slider",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image Gallery Item",
+      "type": "image-gallery-item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image Picker (Desktop)"
+        },{
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Picker (Mobile)"
+        },{
+          "type": "text",
+          "id": "heading_text",
+          "label": "Heading Text",
+          "default": "Best Seller"
+        },{
+          "type": "text",
+          "id": "subheading_text",
+          "label": "Sub-Heading Text"
+        },{
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },{
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Image Gallery"
+    }
+  ]
+
+}
+{% endschema %}

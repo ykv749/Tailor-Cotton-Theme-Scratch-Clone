@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "main": {
+      "type": "marmeto-product-template",
+      "blocks": {
+        "1751433e-557b-462d-95f7-eac5374657df": {
+          "type": "badge",
+          "settings": {
+          }
+        },
+        "4723899e-b400-45df-93e1-d92f94fcccc0": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "acf46d7a-6d96-42c6-8f85-03b3fb8b4794": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "0685235b-d471-4726-81be-5d8d2dd0ac8b": {
+          "type": "icon_with_text",
+          "settings": {
+          }
+        },
+        "821221d6-5d4a-4674-ac29-956cbf8bebab": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "aa0c431e-d38f-4a49-9659-3d1b42ecc326": {
+          "type": "variant_picker",
+          "settings": {
+          }
+        },
+        "fb207a2f-d4b5-4f7a-b981-845fc0ebd789": {
+          "type": "pincode",
+          "settings": {
+          }
+        },
+        "214468df-e277-4e5a-a19a-383d22f186d3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "c97c4cbf-ff1a-4d2a-b01a-9011b3785e43": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "1e3bafb4-7f4c-42c0-b599-2f62986c1978": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care",
+            "content": "",
+            "page": ""
+          }
+        },
+        "e0908ca4-a96c-470e-8090-dbe2777676ef": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping + Returns",
+            "content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "1751433e-557b-462d-95f7-eac5374657df",
+        "4723899e-b400-45df-93e1-d92f94fcccc0",
+        "acf46d7a-6d96-42c6-8f85-03b3fb8b4794",
+        "0685235b-d471-4726-81be-5d8d2dd0ac8b",
+        "821221d6-5d4a-4674-ac29-956cbf8bebab",
+        "aa0c431e-d38f-4a49-9659-3d1b42ecc326",
+        "fb207a2f-d4b5-4f7a-b981-845fc0ebd789",
+        "214468df-e277-4e5a-a19a-383d22f186d3",
+        "c97c4cbf-ff1a-4d2a-b01a-9011b3785e43",
+        "1e3bafb4-7f4c-42c0-b599-2f62986c1978",
+        "e0908ca4-a96c-470e-8090-dbe2777676ef"
+      ],
+      "settings": {
+      }
+    },
+    "product-recommendations": {
+      "type": "marmeto-product-recommendations",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_product_recommendations": true,
+        "title": "You might also love these"
+      }
+    },
+    "product-upsell": {
+      "type": "marmeto-upsell",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_product_upselling": true,
+        "title": "Upsell Products"
+      }
+    },
+    "5e9b570b-e112-434b-9d45-7d28bdc7c85c": {
+      "type": "marmeto-recently-viewed-products",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "title": "Recently viewed"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "product-upsell",
+    "5e9b570b-e112-434b-9d45-7d28bdc7c85c"
+  ]
+}

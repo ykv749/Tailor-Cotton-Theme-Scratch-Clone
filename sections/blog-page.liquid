@@ -1,0 +1,18 @@
+<div class="page-width">
+  <div class="h2 center">{{ blog.title }}</div>
+  <div class="center common-padding">{% render 'breadcrumb' %}</div>
+  <div class="grid grid--1-col grid--4-col-desktop">
+  {% for article in blog.articles  %}
+    <div class="grid__item">
+      {% render 'article-card', article: article %}
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}

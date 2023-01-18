@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "main": {
+      "type": "about-page",
+      "settings": {
+      }
+    },
+    "ea0be2a9-befd-4efa-bf1f-dc3373cecb47": {
+      "type": "richtext",
+      "settings": {
+        "page_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "bgr": "#484931",
+        "text_color": "#ffffff",
+        "heading_text": "<p>UNITED BY BLUE<\/p>",
+        "subheading_text": "<p>We're here to prove that fashion can be a force for good.<\/p>",
+        "btn1_text": "",
+        "btn1_link": "",
+        "btn2_text": "",
+        "btn2_link": "",
+        "paddings": 36,
+        "heading_size": "h6",
+        "sub_heading_size": "h2"
+      }
+    },
+    "82ac0e07-c36f-47d9-abd2-15a1733fd44e": {
+      "type": "video",
+      "settings": {
+        "embed_id": "hSFmG4ICDPw"
+      }
+    },
+    "b4383614-aeff-43d4-afb2-26f064de144a": {
+      "type": "richtext",
+      "settings": {
+        "page_width": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "bgr": "#ffffff",
+        "text_color": "#000000",
+        "heading_text": "<p>Sustainable living<\/p>",
+        "subheading_text": "<p>At United By Blue, we believe business not only has the ability to be a part of environmental solutions, but also a moral responsibility to address them. This is the motivation behind our B Corp status, a certification we have proudly held since 2011.<\/p>",
+        "btn1_text": "",
+        "btn1_link": "",
+        "btn2_text": "",
+        "btn2_link": "",
+        "paddings": 25,
+        "heading_size": "h2",
+        "sub_heading_size": "h6"
+      }
+    },
+    "85e76980-d7ae-4f52-a0a6-a15c2a1c84db": {
+      "type": "blogs",
+      "settings": {
+        "heading": "The Editorial",
+        "featured_article": "journal\/cozy-picks-of-the-season",
+        "blog": "journal",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ea0be2a9-befd-4efa-bf1f-dc3373cecb47",
+    "82ac0e07-c36f-47d9-abd2-15a1733fd44e",
+    "b4383614-aeff-43d4-afb2-26f064de144a",
+    "85e76980-d7ae-4f52-a0a6-a15c2a1c84db"
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-skeleton",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "9d84556b-d9d1-4650-91ca-862d79b3c9de": {
+      "type": "image-overlay-text",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/210715_UBB_Day2_05636_704x1024_745cd4c9-c08f-444f-b5ef-12b85b12970c.webp",
+        "image2": "shopify:\/\/shop_images\/210715_UBB_Day2_08671_704x1024_1ec80936-49c3-43ec-8681-5b688b7ff611.webp",
+        "heading": "Outerwear for the elements",
+        "heading_color": "#ffffff",
+        "btn_text": "Shop Now",
+        "btn_link": "shopify:\/\/collections",
+        "btn_text_color": "#121212",
+        "btn_bg_color": "#ffffff",
+        "content_position": "align-center justify-center",
+        "text_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "9796a8aa-68bd-4873-a31d-d827657c59c6": {
+      "type": "featured-collection",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "view_all": true,
+        "heading": "Fall in comfort",
+        "subheading": "Our top picks for a consciously cozy season.",
+        "collection": "fall-in-comfort",
+        "product_limit": 4
+      }
+    },
+    "6ddbc1f6-3303-4177-90e1-7db03cf7011d": {
+      "type": "image-gallery",
+      "blocks": {
+        "b2a2f667-707b-480a-8139-32b01d026011": {
+          "type": "image-gallery-item",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/ig1_e439c66f-f8a9-4d58-8535-c45021c30c02.webp",
+            "image_mobile": "shopify:\/\/shop_images\/ig1_97c732fa-fe3e-4b23-a802-b81e525e37be.webp",
+            "heading_text": "Best Sellers",
+            "subheading_text": "",
+            "btn_text": "Shop Now",
+            "btn_link": "shopify:\/\/collections\/all-product-for-tailor-cotton"
+          }
+        },
+        "bc6c944f-7681-41ae-917c-79562d955bf0": {
+          "type": "image-gallery-item",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/ig2_824baf7f-cf70-4508-b4fc-75483f09d682.webp",
+            "image_mobile": "shopify:\/\/shop_images\/ig2_a5751960-baa0-412f-b4d1-d3b22cc00b5a.webp",
+            "heading_text": "New Arrivals",
+            "subheading_text": "",
+            "btn_text": "Shop Now",
+            "btn_link": "shopify:\/\/collections\/all-product-for-tailor-cotton"
+          }
+        }
+      },
+      "block_order": [
+        "b2a2f667-707b-480a-8139-32b01d026011",
+        "bc6c944f-7681-41ae-917c-79562d955bf0"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "bgr": "#efede5",
+        "mobile_slider": true
+      }
+    },
+    "c286823e-a65f-4271-8ec0-4172ce2e07ba": {
+      "type": "richtext",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "bgr": "#ffffff",
+        "text_color": "#000000",
+        "heading_text": "<p>Fashion with a focus on green materials, ethical manufacturing and less-waste.<\/p>",
+        "subheading_text": "",
+        "btn1_text": "Read About Our Mission",
+        "btn1_link": "shopify:\/\/collections",
+        "btn2_text": "",
+        "btn2_link": "",
+        "paddings": 33,
+        "heading_size": "h1",
+        "sub_heading_size": "h1"
+      }
+    },
+    "1225aa65-4583-4bad-baed-fc2cc6f0344b": {
+      "type": "image-with-text",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 100,
+        "heading": "Recycled yarns & soft textiles",
+        "paragraph": "<p>Timeless pieces created with upcycled materials to keep you looking warm and oh, so stylish. Great for transitional weather and easy to care for. We know you’ll fall in love.<\/p>",
+        "btn_text": "Shop all socks",
+        "btn_url": "shopify:\/\/collections",
+        "image_desktop": "shopify:\/\/shop_images\/EarlyNovSelects-7-Edit_256x384_b7336e23-80ef-4a13-96d4-c4526680c688.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/EarlyNovSelects-7-Edit_256x384_b7336e23-80ef-4a13-96d4-c4526680c688.jpg",
+        "bgr": "#0f3d51",
+        "text": "#ffffff",
+        "image_below": true
+      }
+    },
+    "7007edf5-1090-4ec2-8e42-46d136371386": {
+      "type": "collection-list",
+      "blocks": {
+        "a5c04b6d-4fc8-4827-9138-9df03fb49c8a": {
+          "type": "collection-list-item",
+          "settings": {
+            "button_text": "Shop Lounge",
+            "collection": "womens-lounge"
+          }
+        },
+        "806282b1-aec0-46cd-a3ec-4d9f9b7f6398": {
+          "type": "collection-list-item",
+          "settings": {
+            "button_text": "Shop Outerwear",
+            "collection": "womens-outerwear"
+          }
+        },
+        "4093d77d-4f57-4f8a-b714-1b07c44fff06": {
+          "type": "collection-list-item",
+          "settings": {
+            "button_text": "Shop Knitwear",
+            "collection": "knitwear"
+          }
+        }
+      },
+      "block_order": [
+        "a5c04b6d-4fc8-4827-9138-9df03fb49c8a",
+        "806282b1-aec0-46cd-a3ec-4d9f9b7f6398",
+        "4093d77d-4f57-4f8a-b714-1b07c44fff06"
+      ],
+      "settings": {
+        "heading": "Shop by category",
+        "mobile_slider": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "66b865fb-35b9-455b-87fb-f466b6cb0792": {
+      "type": "featured-product",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "product": "natural-popover"
+      }
+    },
+    "f38de45e-6569-47c3-8c5d-055dfd6961de": {
+      "type": "featured-collection",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "view_all": false,
+        "heading": "",
+        "subheading": "",
+        "collection": "best-arrivals",
+        "product_limit": 4
+      }
+    },
+    "a55d20ff-ed34-474c-8332-fa36d8cfeb21": {
+      "type": "shop-the-look",
+      "settings": {
+        "image_url": "shopify:\/\/shop_images\/Cotton-STL-crop_1376x768_3036d9e3-b6dd-41f2-9c4a-3aa3f40f51b3.webp",
+        "page_width": false,
+        "button_url": "shopify:\/\/collections\/all-product-for-tailor-cotton",
+        "product1": "softhemp™-slouch-beanie",
+        "horizontal1": 25,
+        "vertical1": 60,
+        "product2": "softhemp™-high-neck-tank",
+        "horizontal2": 30,
+        "vertical2": 40
+      }
+    },
+    "a13d9d22-b9d3-403f-8165-47352a1cd156": {
+      "type": "richtext",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "bgr": "#efede5",
+        "text_color": "#000000",
+        "heading_text": "<p>The Coastal Edition<\/p>",
+        "subheading_text": "<p>Our new cozy collection is made with environmentally friendly materials and simple to care for— so you can stay cozy wherever you go.<\/p>",
+        "btn1_text": "Shop Men's",
+        "btn1_link": "shopify:\/\/collections",
+        "btn2_text": "Shop Women's",
+        "btn2_link": "shopify:\/\/collections",
+        "paddings": 34,
+        "heading_size": "h2",
+        "sub_heading_size": "h6"
+      }
+    },
+    "dc2ee33e-bb2e-4540-822a-2fccfbc84e1f": {
+      "type": "blogs",
+      "settings": {
+        "heading": "Our Journal",
+        "featured_article": "journal\/best-ways-to-care-for-your-products",
+        "blog": "journal",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9d84556b-d9d1-4650-91ca-862d79b3c9de",
+    "9796a8aa-68bd-4873-a31d-d827657c59c6",
+    "6ddbc1f6-3303-4177-90e1-7db03cf7011d",
+    "c286823e-a65f-4271-8ec0-4172ce2e07ba",
+    "1225aa65-4583-4bad-baed-fc2cc6f0344b",
+    "7007edf5-1090-4ec2-8e42-46d136371386",
+    "66b865fb-35b9-455b-87fb-f466b6cb0792",
+    "f38de45e-6569-47c3-8c5d-055dfd6961de",
+    "a55d20ff-ed34-474c-8332-fa36d8cfeb21",
+    "a13d9d22-b9d3-403f-8165-47352a1cd156",
+    "dc2ee33e-bb2e-4540-822a-2fccfbc84e1f"
+  ]
+}

@@ -1,0 +1,41 @@
+<div class="video-section page-width"><iframe
+  width="800"
+  height="600"
+  src="https://www.youtube.com/embed/{{ section.settings.embed_id }}"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+</div>
+
+{% style %}
+  .video-section iframe {
+     width: 100%; 
+  }
+{% endstyle %}
+  
+{% schema %}
+{
+  "name": "Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "embed_id",
+      "label": "YouTube Embed Id",
+      "default": "hSFmG4ICDPw"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,57 @@
+{% if section.blocks.size > 0 %}
+  <div
+    class="announcement-bar"
+    data-flickity='{ "cellAlign": "center", "contain": true, "pageDots": false, "prevNextButtons": true, "imagesLoaded": false }'
+  >
+    {% for block in section.blocks %}
+      {% if block.settings.annoucement_text != blank %}
+        <div class="announcement-bar-item center">
+          {{ block.settings.annoucement_text }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% style %}
+  .announcement-bar {
+    background: {{ section.settings.bgr }} ;
+  }
+  .announcement-bar-item {
+    margin: 1rem;
+    width: 100%;
+  }
+  .announcement-bar .flickity-prev-next-button {
+    width: 2rem;
+    height: 2rem;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bgr",
+      "label": "Background Color",
+      "default": "#EFEDE5"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Announcement Item",
+      "type": "announcement-item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "annoucement_text",
+          "label": "Enter the Text"
+        }
+      ]
+    }
+  ]
+
+}
+{% endschema %}

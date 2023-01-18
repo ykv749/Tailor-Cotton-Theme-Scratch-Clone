@@ -1,0 +1,28 @@
+<div class="page-width">
+  <div class="center">
+    <div class="h2">{{ article.title }}</div>
+    <div>
+      {% render 'image',
+        class: 'media media--landscape',
+        mobileSrc: article.image,
+        desktopSrc: article.image
+      %}
+    </div>
+    <div class="left common-padding">
+      {{ article.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

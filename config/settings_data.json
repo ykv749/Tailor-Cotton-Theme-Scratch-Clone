@@ -1,0 +1,99 @@
+{
+  "current": {
+    "button_text_color": "#121212",
+    "button_background_color": "#ffffff",
+    "type_header_font": "dm_sans_n5",
+    "heading_scale": 115,
+    "type_body_font": "helvetica_n3",
+    "body_scale": 105,
+    "page_width": 1360,
+    "spacing_grid_horizontal": 15,
+    "spacing_grid_vertical": 15,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tiktok_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "3fed297d-2237-47b5-b329-45343d435ae5": {
+            "type": "announcement-item",
+            "settings": {
+              "annoucement_text": "Free shipping on orders over $100"
+            }
+          },
+          "d09f2424-a763-4a37-9bb2-952ba04ff9b5": {
+            "type": "announcement-item",
+            "settings": {
+              "annoucement_text": "Up to 70% off final markdowns"
+            }
+          }
+        },
+        "block_order": [
+          "3fed297d-2237-47b5-b329-45343d435ae5",
+          "d09f2424-a763-4a37-9bb2-952ba04ff9b5"
+        ],
+        "settings": {
+          "bgr": "#efede5"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "menu": "tailor-header"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/logo.png",
+          "menu": "tailor-footer",
+          "heading": "Thank you",
+          "subheading": "This is a demo store.",
+          "social_menu": true,
+          "newsletter_button_text": "Subscribe",
+          "newsletter_heading": "Sign Up and Save",
+          "newsletter_subheading": "Subscribe to get notified about product launches, special offers and company news."
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "judgeme_core_dd31401c": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "type_header_font": "din_next_n5",
+      "heading_scale": 100,
+      "type_body_font": "open_sans_n4",
+      "body_scale": 100,
+      "page_width": 1440,
+      "spacing_grid_horizontal": 15,
+      "spacing_grid_vertical": 15,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": ""
+    }
+  }
+}

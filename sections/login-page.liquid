@@ -1,0 +1,64 @@
+<div
+  class="page-width"
+  <div
+  style="max-width: 70%;"
+>
+  <div class="login-page h4 center common-padding">Login Page</div>
+  {% if customer %}
+    <div class="h6 center common-padding">You are already Logged In!!!</div>
+    <div class="center common-padding">
+      <a class="button button--primary" href="{{ routes.account_logout_url }}">Logout</a>
+    </div>
+  {% else %}
+    {% form 'customer_login', return: routes.account_url %}
+      {{ form.errors | default_errors }}
+      <div class="container">
+        <label for="email"><b>Email</b></label>
+        <input type="email" name="customer[email]">
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" name="customer[password]">
+
+        <input type="submit" class="button button--primary common-padding" value="Sign in">
+        <a class="button button--primary common-padding" href="/account/forgot_password">Forget Password</a>
+
+        <div class="common-padding">
+          <div class="container register">
+            <p>
+              <b>Don't have an account?</b>
+              <a class="button button--primary" href="{{ routes.account_register_url }}">Register</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endform %}
+  {% endif %}
+</div>
+
+{% style %}
+  .container input[type=email], .container input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .register {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,39 @@
+<div class="page-width">
+  <div class="center search__container">
+    <form action="{{ routes.search_url }}">
+      <input
+        type="text"
+        placeholder="Search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        style="padding: 2rem; width: 70%;"
+      >
+      <input type="submit" class="button button--primary" value="Search">
+    </form>
+  </div>
+  <div class="grid grid--1-col grid--4-col-desktop">
+    {% for item in search.results %}
+      {% if item.available %}
+        <div class="grid__item">
+          {% render 'product-card', product: item %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
+
+{% style %}
+  .search__container {
+    margin: 5rem;
+  }
+{% endstyle %}
+
+{% javascript %}
+{% endjavascript %}

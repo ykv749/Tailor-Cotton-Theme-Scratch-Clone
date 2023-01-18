@@ -1,0 +1,129 @@
+<div class="page-width section-{{ section.id }}-padding collection-list">
+  <h2 class="center common-padding">Collection List</h2>
+  <div class="center">{% render 'breadcrumb' %}</div>
+  <div
+    class="collection-list__wrapper grid grid--{{ section.settings.mobile_columns }}-col grid--{{ section.settings.desktop_columns }}-col-desktop carousel--{{ section.id }}"
+    {% if section.settings.mobile_slider %}
+      data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "prevNextButtons": false, "imagesLoaded": false, "watchCSS": true }'
+    {% endif %}
+  >
+    {% for collection in collections %}
+      <div class="grid__item collection-list__item">
+        <div class="cl__image-item">
+          {% render 'image',
+            class: 'media cl__image media--portrait media--animated',
+            mobileSrc: collection.featured_image,
+            desktopSrc: collection.featured_image
+          %}
+        </div>
+        <div class="center h5 common-padding">{{ collection.title }}</div>
+        <div class="center common-padding">
+          <a class="button button--primary" href="{{ collection.url }}"> Shop Now </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% style %}
+  .collection-list__item:hover .media--animated img {
+      transform: scale(1.075);
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* disable Flickity for large devices */
+    .carousel--{{ section.id }}:after {
+      content: '';
+    }
+
+  @media screen and ( max-width: 990px ) {
+    .carousel--{{ section.id }}:after {
+      content: 'flickity';
+      display: none; /* hide :after */
+    }
+
+    .carousel--{{ section.id }} {
+       display: block;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "List Collection",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "mobile_slider",
+      "label": "Show Mobile Slider",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Columns on Desktop",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 Column"
+        },
+        {
+          "value": "2",
+          "label": "2 Columns"
+        },
+        {
+          "value": "3",
+          "label": "3 Columns"
+        },
+        {
+          "value": "4",
+          "label": "4 Columns"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Columns on Mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 Column"
+        },
+        {
+          "value": "2",
+          "label": "2 Columns"
+        },
+        {
+          "value": "3",
+          "label": "3 Columns"
+        },
+        {
+          "value": "4",
+          "label": "4 Columns"
+        }
+      ],
+      "default": "1"
+    }
+
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

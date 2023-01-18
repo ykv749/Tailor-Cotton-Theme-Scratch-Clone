@@ -1,0 +1,104 @@
+.card_button {
+  width: 100%;
+}
+
+.common-padding-product {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.product-card__prices {
+  justify-content: center;
+}
+
+.product-card__options--swatch label {
+  height: 30px;
+  min-width: 40px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.product-card__options--swatch .swatches--color {
+  height: 2.1rem;
+  width: 2.1rem;
+  display: block;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.product-card__options--swatch.swatch-size input:checked ~ label {
+  background: #000;
+  color: #fff;
+}
+.product-card__options--swatch.swatch-color label {
+  width: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+.product-card__options--swatch.swatch-color input:checked ~ label {
+  border-color: black;
+}
+
+.product-card {
+  height: 100%;
+  display: block;
+  position: relative;
+  padding-bottom: 50px;
+  overflow: hidden;
+}
+
+.product-card__meta a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.product-card__button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.product-card__link {
+  display: block;
+  margin-bottom: 1.5rem;
+  transition: width 2s, height 4s;
+}
+
+.product-card__link:hover {
+  transform: scale(1.2);
+}
+
+.product__card-badges {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+.product__card-badge {
+  padding: 4px 15px;
+  margin: 0 5px 10px 0;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.product__card-badge:nth-child(odd) {
+  background: white;
+  color: black;
+}
+
+.product__card-badge:nth-child(even) {
+  background: navy;
+  color: white;
+}

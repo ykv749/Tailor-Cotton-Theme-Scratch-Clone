@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "list-collections",
+      "settings": {
+        "mobile_slider": false,
+        "desktop_columns": "3",
+        "Mobile_columns": "2"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

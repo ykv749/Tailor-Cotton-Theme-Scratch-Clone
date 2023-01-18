@@ -1,0 +1,146 @@
+<div class="header page-width" style="padding: 1rem;">
+  <div class="header__mobile">
+    <div class="left hamburger header-icon" onclick="func()">
+      {% render 'icon', icon: 'hamburger' %}
+    </div>
+
+    <div class="center header__mobile-logo">
+      <a class="clrbl" href="{{ routes.root_url }}">
+        {%- render 'image', mobileSrc: section.settings.logo, desktopSrc: section.settings.logo -%}
+      </a>
+    </div>
+
+    <div class="right flex header__mobile-icons">
+      <div class="header-icon">
+        <a class="clrbl" href="{{ routes.search_url }}">{% render 'icon', icon: 'search' %}</a>
+      </div>
+      <div class="header-icon">
+        <a
+          class="clrbl"
+          href="
+            {% if customer %}
+            {{ routes.account_url }}
+            {% else %}
+              {{ routes.account_login_url }}
+              {% endif %}
+          "
+        >
+          {% render 'icon', icon: 'account' %}
+        </a>
+      </div>
+      <div class="header-icon">
+        <a class="clrbl" href="{{ routes.cart_url }}">
+          {% render 'icon', icon: 'cart' %}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu-list" class="common-padding">
+    <ul class="left nobullets">
+      {% for link in section.settings.menu.links %}
+        <li>
+          <a class="clrbl tn hover-underline-animation" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="header__desktop">
+    <div class="left header__desktop-logo">
+      <a href="{{ routes.root_url }}">
+        {%- render 'image', mobileSrc: section.settings.logo, desktopSrc: section.settings.logo -%}
+      </a>
+    </div>
+
+    <div class="center flex header__desktop-menu-list" style="align-items: center;">
+      {% for link in section.settings.menu.links %}
+        <div>
+          <a
+            class="clrbl hover-underline-animation"
+            href="{{ link.url }}"
+            style="text-decoration: none; font-size: 1.5rem; margin: 1rem;"
+          >
+            {{- link.title -}}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="right flex header__desktop-icons" style="margin-left: auto;">
+      <div class="flex__item header-icon">
+        <a
+          class="clrbl"
+          href="
+            {% if customer %}
+            {{ routes.account_url }}
+            {% else %}
+              {{ routes.account_login_url }}
+              {% endif %}
+          "
+        >
+          {% render 'icon', icon: 'account' %}
+        </a>
+      </div>
+      <div class="flex__item header-icon">
+        <a class="clrbl" href="{{ routes.search_url }}">
+          {% render 'icon', icon: 'search' %}
+        </a>
+      </div>
+      <div class="flex__item header-icon">
+        <a class="clrbl" href="{{ routes.cart_url }}">
+          {% render 'icon', icon: 'cart' %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .hamburger {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+  }
+
+  .header-icon {
+    margin: 1rem;
+  }
+  .header__desktop {
+      display: flex;
+    }
+    .header__mobile {
+      display: none;
+    }
+  #mobile-menu-list {
+    display: none;
+  }
+  @media only screen and (max-width: 990px) {
+    .header__desktop {
+      display: none;
+    }
+    .header__mobile {
+      display: flex;
+    }
+    .header__mobile-logo {
+      margin: auto;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Image"
+    },{
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}
