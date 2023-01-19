@@ -36,24 +36,19 @@
 {% form 'recover_customer_password' %}
   {{ form.errors | default_errors }}
   <div class="page-width recover hidden" id="recover">
-    <div class="login_wrapper flex jusify-center align-center">
-      <div class="login-container">
-        <div class="login-inner">
-          <div class="heading">
-            <h1>Reset your password</h1>
-          </div>
-        </div>
-        <div class="left submit">We will send you an email to reset your password.</div>
-        <div class="email">
-          <input type="email" name="email" placeholder="Email">
-        </div>
+    <div class="h4 center common-padding">Reset Your Password</div>
+    <div class="container">
+      <label for="email"><b>Email</b></label>
+      <input type="email" name="customer[email]">
 
-        <div class="submit">
-          <input type="submit" value="Submit" class="button button--primary">
-        </div>
-        <div class="account-recover-redirect left account-subheading">
-          <a href="#">Cancel</a>
-        </div>
+      <input type="submit" class="button button--primary common-padding" value="Sign in">
+      <a class="button button--primary common-padding account-login-redirect">Forget Password</a>
+
+      <div class="submit">
+        <input type="submit" value="Submit" class="button button--primary">
+      </div>
+      <div class="account-recover-redirect left account-subheading">
+        <a href="#">Cancel</a>
       </div>
     </div>
   </div>
