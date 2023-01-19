@@ -21,8 +21,8 @@
                   <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
                 </td>
                 <td>
-                  {{ item.price | money }}
-                  {{ item.original_price | money }}
+                  <p>{{ item.price | money }}</p>
+                  <s class="op6">{{ item.original_price | money }}</s>
                 </td>
                 <td>
                   <input
