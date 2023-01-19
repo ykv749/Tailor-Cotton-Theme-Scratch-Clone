@@ -2,7 +2,8 @@
   <div class="center">
     {% assign shippping_amount = settings.shipping_amount | times: 100 %}
 
-    {{ shippping_amount | money }}
+    {{ shippping_amount }}
+    {{ cart.total_price }}
     {% if cart.total_price>=shipping_amount %}
         <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
     {% else %}
