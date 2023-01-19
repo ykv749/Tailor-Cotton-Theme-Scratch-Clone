@@ -356,10 +356,10 @@ function fc2() {
 
 function checkfunc(id) {
   console.warn(type(id));
-  var temp = document.getElementById("id");
-  if (temp.style.display === "none") {
-    temp.style.display = "block";
-  } else {
-    temp.style.display = "none";
-  }
+  // var temp = document.getElementById("id");
+  // if (temp.style.display === "none") {
+  //   temp.style.display = "block";
+  // } else {
+  //   temp.style.display = "none";
+  // }
 }
