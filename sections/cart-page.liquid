@@ -11,7 +11,7 @@
       <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
     {% else %}
       {% assign remaining = temp_cart_price | minus: temp_shippping_amount %}
-      <div class="h5 center">You're Just {{ remaining | money }} away from Free Shipping.</div>
+      <div class="h5 center">You're Just {{ remaining | times: 100 | money }} away from Free Shipping.</div>
     {% endif %}
 
     <form action="{{ routes.cart_url }}" method="post">
