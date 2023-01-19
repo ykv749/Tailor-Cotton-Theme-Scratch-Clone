@@ -30,7 +30,10 @@
                 >
                 <input type="hidden" name="item_id" value="{{ item.id }}">
               </td>
-              <td>{{ item.final_price | money }}</td>
+              <td>
+                {% assign temp = item.price | times: item.quantity %}
+                {{ temp | money }}
+              </td>
               <td>
                 <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
               </td>
