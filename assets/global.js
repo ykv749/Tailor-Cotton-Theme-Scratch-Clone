@@ -355,7 +355,7 @@ function fc2() {
 }
 
 function checkfunc(id) {
-  console.log(id);
+  console.warn(type(id));
   var temp = document.getElementById("id");
   if (temp.style.display === "none") {
     temp.style.display = "block";
