@@ -4,7 +4,7 @@
 
     {{ shippping_amount }}
     {{ cart.total_price }}
-    {% if cart.total_price >= shipping_amount %}
+    {% if cart.total_price <= shipping_amount %}
         <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
     {% else %}
       {% assign remaining = shippping_amount | minus: cart.total_price %}
