@@ -42,7 +42,8 @@
       {%- for handle in upsell_handles -%}
         {%- assign product = all_products[handle] -%}
         <div>
-          <p>{{ product.title }}</p>
+          <input type="checkbox" id="{{ product.title | handleize }}">
+          <label for="{{ product.title | handleize }}--{{ forloop.index0 }}"> {{ product.title }}</label><br>
         </div>
       {%- endfor -%}
     </div>
