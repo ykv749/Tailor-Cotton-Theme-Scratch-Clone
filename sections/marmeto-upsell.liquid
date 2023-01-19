@@ -43,7 +43,7 @@
         {%- for handle in upsell_handles -%}
           {%- assign product = all_products[handle] -%}
           <div>
-            {% render 'image', class: '', mobileSrc: product.image, desktopSrc: product.image %}
+            {% render 'image', class: '', mobileSrc: product.featured_image, desktopSrc: product.featured_image %}
           </div>
         {%- endfor -%}
       </div>
