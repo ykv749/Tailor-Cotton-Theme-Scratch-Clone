@@ -1,5 +1,6 @@
 {
   "current": {
+    "shipping_amount": 50000,
     "button_text_color": "#121212",
     "button_background_color": "#ffffff",
     "type_header_font": "dm_sans_n5",
