@@ -14,7 +14,9 @@
           {% for item in cart.items %}
             <tr>
               <td>
-                <div class="h5">{{ item.product.title }}</div>
+                <div class="h5">
+                  <a href="{{ item.url }}">{{ item.product.title }}</a>
+                </div>
                 <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
               </td>
               <td>{{ item.price | money }}</td>
