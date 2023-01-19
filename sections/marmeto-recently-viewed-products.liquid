@@ -40,7 +40,7 @@
           {%- for parsed_term in parsed_terms -%}
             {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
 
-            {%- for product in search.results -%}
+            {%- for product in search.results limit: 4 -%}
               {%- if product.id == id -%}
                 <div class="grid__item">
                   {%- render 'product-card', product: product -%}
