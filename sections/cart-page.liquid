@@ -1,67 +1,69 @@
 <div class="page-width">
   <div class="center">
-    {% if cart.item_count > 0 %}
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in cart.items %}
+    <form action="{{ routes.cart_url }}" method="post">
+      {% if cart.item_count > 0 %}
+        <table>
+          <thead>
             <tr>
-              <td>
-                <div class="h5">
-                  <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
-                </div>
-                <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
-              </td>
-              <td>{{ item.price | money }}</td>
-              <td>
-                <input
-                  type="number"
-                  name="updates[]"
-                  value="{{ item.quantity }}"
-                  min="0"
-                  max="{{ item.product.variants.first.inventory_quantity }}"
-                >
-                <input type="hidden" name="item_id" value="{{ item.id }}">
-              </td>
-              <td>
-                {% assign temp = item.price | times: item.quantity %}
-                {{ temp | money }}
-                <s class="op6">{{ item.final_line_price | money }}</s>
-              </td>
-              <td>
-                <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
-              </td>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
             </tr>
-          {% endfor %}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3"></td>
-            <td>{{ cart.total_price | money }}</td>
-          </tr>
-        </tfoot>
-      </table>
-      <div class="common-padding">
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr>
+                <td>
+                  <div class="h5">
+                    <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
+                  </div>
+                  <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
+                </td>
+                <td>{{ item.price | money }}</td>
+                <td>
+                  <input
+                    type="number"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    max="{{ item.product.variants.first.inventory_quantity }}"
+                  >
+                  <input type="hidden" name="item_id" value="{{ item.id }}">
+                </td>
+                <td>
+                  {% assign temp = item.price | times: item.quantity %}
+                  {{ temp | money }}
+                  <s class="op6">{{ item.final_line_price | money }}</s>
+                </td>
+                <td>
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"></td>
+              <td>{{ cart.total_price | money }}</td>
+            </tr>
+          </tfoot>
+        </table>
         <div class="common-padding">
-          <div class="h5">Add a Note to the Cart</div>
-          <textarea class="cart-note" style="resize: none;" name="note"></textarea>
+          <div class="common-padding">
+            <div class="h5">Add a Note to the Cart</div>
+            <textarea class="cart-note" style="resize: none;" name="note"></textarea>
+          </div>
+          <input class="button button--primary" type="submit" value="Update Cart">
+          <a class="button button--primary" href="/checkout">Checkout</a>
         </div>
-        <input class="button button--primary" type="submit" value="Update Cart">
-        <a class="button button--primary" href="/checkout">Checkout</a>
-      </div>
-    {% else %}
-      <div class="common-padding">
-        <div class="h4 common-padding">Your cart is empty.</div>
-        <a class="button button--primary common-padding" href="/">Continue shopping</a>
-      </div>
-    {% endif %}
+      {% else %}
+        <div class="common-padding">
+          <div class="h4 common-padding">Your cart is empty.</div>
+          <a class="button button--primary common-padding" href="/">Continue shopping</a>
+        </div>
+      {% endif %}
+    </form>
   </div>
 </div>
 {% schema %}
