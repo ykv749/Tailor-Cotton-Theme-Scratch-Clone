@@ -37,6 +37,15 @@
         </div>
       {%- endfor -%}
     </div>
+
+    <div>
+      {%- for handle in upsell_handles -%}
+        <div>
+          <input type="checkbox" id="{{ handle.name | handleize }}">
+          <label for="{{ handle.name | handleize }}--{{ forloop.index0 }}"> {{ handle.name }} </label><br>
+        </div>
+      {%- endfor -%}
+    </div>
   </div>
 {%- endif -%}
 
