@@ -354,7 +354,7 @@ function fc2() {
   }
 }
 
-function checkfunc(id) {
+const checkfunc = function (id) {
   console.log(typeof id);
   console.log(id);
   var temp = document.getElementById("id");
@@ -363,4 +363,4 @@ function checkfunc(id) {
   } else {
     temp.style.display = "none";
   }
-}
+};
