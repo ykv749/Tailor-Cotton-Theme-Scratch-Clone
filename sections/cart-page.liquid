@@ -1,7 +1,7 @@
 <div class="page-width">
   <div class="center">
     {% liquid
-      assign temp_shippping_amount = settings.shipping_amount
+      assign temp_shippping_amount = settings.shipping_amount | plus: 0
       assign temp_cart_price = cart.total_price | divided_by: 100
     %}
 
