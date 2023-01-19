@@ -4,6 +4,9 @@
 
     {% if cart.total_price>=shipping_amount %}
         <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
+    {% else %}
+      {% assign remaining = settings.shipping_amount | minus: cart.total_price %}
+      <div class="h5 center">You're Just {{ remaining | money }} away from Free Shipping.</div>
     {% endif %}
 
     <form action="{{ routes.cart_url }}" method="post">
