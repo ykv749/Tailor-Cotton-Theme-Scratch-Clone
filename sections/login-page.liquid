@@ -33,33 +33,31 @@
   {% endif %}
 </div>
 
-<div class="page-width recover-password">
-  {% form 'recover_customer_password' %}
-    {{ form.errors | default_errors }}
-    <div class="page-width recover hidden" id="recover">
-      <div class="login_wrapper flex jusify-center align-center">
-        <div class="login-container">
-          <div class="login-inner">
-            <div class="heading">
-              <h1>Reset your password</h1>
-            </div>
+{% form 'recover_customer_password' %}
+  {{ form.errors | default_errors }}
+  <div class="page-width recover hidden" id="recover">
+    <div class="login_wrapper flex jusify-center align-center">
+      <div class="login-container">
+        <div class="login-inner">
+          <div class="heading">
+            <h1>Reset your password</h1>
           </div>
-          <div class="left submit">We will send you an email to reset your password.</div>
-          <div class="email">
-            <input type="email" name="email" placeholder="Email">
-          </div>
+        </div>
+        <div class="left submit">We will send you an email to reset your password.</div>
+        <div class="email">
+          <input type="email" name="email" placeholder="Email">
+        </div>
 
-          <div class="submit">
-            <input type="submit" value="Submit" class="button button--primary">
-          </div>
-          <div class="account-recover-redirect left account-subheading">
-            <a href="#">Cancel</a>
-          </div>
+        <div class="submit">
+          <input type="submit" value="Submit" class="button button--primary">
+        </div>
+        <div class="account-recover-redirect left account-subheading">
+          <a href="#">Cancel</a>
         </div>
       </div>
     </div>
-  {% endform %}
-</div>
+  </div>
+{% endform %}
 
 {% style %}
   @media only screen and (min-width: 990px) {
