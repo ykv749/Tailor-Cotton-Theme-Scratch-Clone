@@ -43,7 +43,7 @@
         {%- assign product = all_products[handle] -%}
         <div>
           <input type="checkbox" id="{{ product.title | handleize }}">
-          <label for="{{ product.title | handleize }}--{{ forloop.index0 }}"> {{ product.title }}</label><br>
+          <label for="{{ product.title | handleize }}--{{ forloop.index0 }}"> {{ product.title }} {{ product.price }}</label><br>
         </div>
       {%- endfor -%}
     </div>
