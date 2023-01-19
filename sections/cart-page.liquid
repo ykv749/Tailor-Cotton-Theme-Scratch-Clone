@@ -1,11 +1,11 @@
 <div class="page-width">
   <div class="center">
-    {% assign shippping_amount = settings.shipping_amount %}
+    {% assign shippping_amount = settings.shipping_amount | plus: 0 %}
 
     {% if cart.total_price>=shipping_amount %}
         <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
     {% else %}
-      {% assign remaining = settings.shipping_amount | minus: cart.total_price %}
+      {% assign remaining = shippping_amount | minus: cart.total_price %}
       <div class="h5 center">You're Just {{ remaining | money }} away from Free Shipping.</div>
     {% endif %}
 
