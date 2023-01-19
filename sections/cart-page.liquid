@@ -15,6 +15,9 @@
             {% for item in cart.items %}
               <tr>
                 <td>
+                  <div class="h5 cart-item-title">
+                    <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
+                  </div>
                   <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
                 </td>
                 <td>{{ item.price | money }}</td>
@@ -71,6 +74,9 @@
 {% endschema %}
 
 {% style %}
+  .cart-item-title {
+    display: none;
+  }
     table {
     width: 100%;
     border-collapse: collapse;
