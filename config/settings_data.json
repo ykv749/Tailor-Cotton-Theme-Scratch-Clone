@@ -1,6 +1,5 @@
 {
   "current": {
-    "shipping_amount": 50000,
     "button_text_color": "#121212",
     "button_background_color": "#ffffff",
     "type_header_font": "dm_sans_n5",
@@ -10,6 +9,7 @@
     "page_width": 1360,
     "spacing_grid_horizontal": 15,
     "spacing_grid_vertical": 15,
+    "shipping_amount": 50000,
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_pinterest_link": "",
@@ -19,6 +19,7 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
+    "favicon": "shopify:\/\/shop_images\/logo.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
