@@ -1,13 +1,16 @@
 <div class="page-width">
   <div class="center">
-    {% assign shippping_amount = settings.shipping_amount | times: 100 %}
+    {% liquid
+      assign temp_shippping_amount = settings.shipping_amount
+      assign temp_cart_price = cart.total_price | divided_by: 100
+    %}
 
-    {{ shippping_amount }}
-    {{ cart.total_price }}
-    {% if cart.total_price >= shipping_amount %}
-        <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
+    {{ temp_shippping_amount }}
+    {{ temp_cart_price }}
+    {% if temp_cart_price >= temp_shippping_amount %}
+      <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
     {% else %}
-      {% assign remaining = shippping_amount | minus: cart.total_price %}
+      {% assign remaining = temp_cart_price | minus: temp_shippping_amount %}
       <div class="h5 center">You're Just {{ remaining | money }} away from Free Shipping.</div>
     {% endif %}
 
