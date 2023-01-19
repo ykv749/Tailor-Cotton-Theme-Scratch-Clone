@@ -21,8 +21,10 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'aos.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
     {{ 'flickity.js' | asset_url | script_tag }}
+    {{ 'aos.js' | asset_url | script_tag }}
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
@@ -111,7 +113,7 @@
   <body class="template-{{ template.name }}">
     {% section 'announcement-bar' %}
     {% section 'header' %}
-    
+
     <main id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
