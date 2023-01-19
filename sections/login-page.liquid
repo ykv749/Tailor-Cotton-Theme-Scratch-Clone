@@ -1,5 +1,5 @@
 <div
-  class="page-width login-page" 
+  class="page-width login-page"
 >
   <div class="h4 center common-padding">Login Page</div>
   {% if customer %}
@@ -31,6 +31,22 @@
       </div>
     {% endform %}
   {% endif %}
+</div>
+
+<div class="page-width">
+  {% form 'reset_customer_password' %}
+    {{ form.errors | default_errors }}
+
+    <div class="container">
+      <label for="password">Password</label>
+      <input type="password" name="customer[password]">
+
+      <label for="password_confirmation">Password confirmation</label>
+      <input type="password" name="customer[password_confirmation]">
+
+      <input type="submit" class="button button--primary" value="Reset password">
+    </div>
+  {% endform %}
 </div>
 
 {% style %}
