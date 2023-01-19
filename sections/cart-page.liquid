@@ -51,7 +51,7 @@
       <div class="common-padding">
         <div class="common-padding">
           <div class="h5">Add a Note to the Cart</div>
-          <textarea style="resize: none;" name="note"></textarea>
+          <textarea class="cart-note" style="resize: none;" name="note"></textarea>
         </div>
         <input class="button button--primary" type="submit" value="Update Cart">
         <a class="button button--primary" href="/checkout">Checkout</a>
@@ -94,6 +94,10 @@
   }
   a:hover {
     text-decoration: underline;
+  }
+  .cart-note {
+    height: 10rem;
+    width: 10rem;
   }
 {% endstyle %}
 
