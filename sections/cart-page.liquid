@@ -4,9 +4,6 @@
       assign temp_shippping_amount = settings.shipping_amount | plus: 0
       assign temp_cart_price = cart.total_price | divided_by: 100
     %}
-
-    {{ temp_shippping_amount }}
-    {{ temp_cart_price }}
     {% if temp_cart_price >= temp_shippping_amount %}
       <div class="h5">Congratulations, 🤩 You got Free Shipping</div>
     {% else %}
