@@ -39,6 +39,14 @@
     </div>
 
     <div>
+      <div>
+        {%- for handle in upsell_handles -%}
+          {%- assign product = all_products[handle] -%}
+          <div>
+            <img src="{{ product.image | img_url: 'medium' }}">
+          </div>
+        {%- endfor -%}
+      </div>
       <div class="upsell__checkboxes">
         {%- for handle in upsell_handles -%}
           {%- assign product = all_products[handle] -%}
