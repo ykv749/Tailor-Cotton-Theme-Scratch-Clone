@@ -4,9 +4,18 @@
       "type": "cart-page",
       "settings": {
       }
+    },
+    "8c460bdb-0ea0-4106-828b-fe763bb660fc": {
+      "type": "marmeto-recently-viewed-products",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "title": "Recently viewed"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "8c460bdb-0ea0-4106-828b-fe763bb660fc"
   ]
 }
