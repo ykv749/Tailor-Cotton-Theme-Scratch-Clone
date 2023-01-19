@@ -33,7 +33,7 @@
               <td>
                 {% assign temp = item.price | times: item.quantity %}
                 {{ temp | money }}
-                {{ item.final_line_price }}
+                {{ item.final_line_price | money }}
               </td>
               <td>
                 <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
