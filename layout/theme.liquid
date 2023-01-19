@@ -22,6 +22,9 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'aos.js' | asset_url }}" defer="defer"></script>
+    <script>
+      AOS.init();
+    </script>
     {{ content_for_header }}
     {{ 'flickity.js' | asset_url | script_tag }}
     {{ 'aos.js' | asset_url | script_tag }}
