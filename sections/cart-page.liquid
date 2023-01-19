@@ -32,6 +32,9 @@
                     <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
                   </div>
                   <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
+                  <div class="cart-item-product-title">
+                    <a class="tn clrbl" href="{{ item.url }}">{{ item.product.title }}</a>
+                  </div>
                 </td>
                 <td>
                   <p>{{ item.price | money }}</p>
@@ -93,6 +96,7 @@
 {% endschema %}
 
 {% style %}
+  
   .cart-item-title {
     display: none;
   }
@@ -100,6 +104,9 @@
   @media only screen and (min-width: 990px) {
     .cart-item-title {
       display: block;
+    }
+    .cart-item-product-title {
+      display: none;
     }
   }
 
