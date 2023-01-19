@@ -81,15 +81,26 @@
   }
 {% endstyle %}
 
+{% javascript %}
+  let login = document.querySelector(".login");
+  let recover = document.querySelector(".recover");
+  let login_redirect = document.querySelector(".account-login-redirect");
+  let recover_redirect = document.querySelector(".account-recover-redirect")
+
+  login_redirect.addEventListener('click',()=>{
+    recover.classList.remove("hidden");
+    login.classList.add("hidden");
+  })
+
+  recover_redirect.addEventListener('click',()=>{
+    recover.classList.add("hidden");
+    login.classList.remove("hidden");
+  })
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "Section name",
   "settings": []
 }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
