@@ -11,6 +11,9 @@
       <input type="submit" class="button button--primary" value="Search">
     </form>
   </div>
+  {% if search.performed %}
+    <div class="h4">No Products Found</div>
+  {% else %}
   <div class="grid grid--1-col grid--4-col-desktop">
     {% for item in search.results %}
       {% if item.available %}
@@ -19,6 +22,7 @@
         </div>
       {% endif %}
     {% endfor %}
+  {% endif %}
   </div>
 </div>
 
