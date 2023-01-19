@@ -1,5 +1,5 @@
 <div class="page-width">
-  <div class="center">
+  <div class="cart__wrapper center">
     {% if cart.item_count > 0 %}
       {% liquid
         assign temp_shippping_amount = settings.shipping_amount | plus: 0
@@ -99,6 +99,10 @@
   
   .cart-item-title {
     display: none;
+  }
+
+  .cart__wrapper {
+    overflow: auto;
   }
 
   @media only screen and (min-width: 990px) {
