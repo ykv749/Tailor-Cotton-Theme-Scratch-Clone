@@ -51,7 +51,7 @@
         {%- for handle in upsell_handles -%}
           {%- assign product = all_products[handle] -%}
           <div>
-            <input type="checkbox" id="{{ product.title | handleize }}" checked>
+            <input type="checkbox" id="{{ product.title | handleize }}" value="checkbox--{{ product.id }}" checked onclick="checkfunc(value)">
             <label for="{{ product.title | handleize }}--{{ forloop.index0 }}">
               {{ product.title }}
               {{ product.price | money -}}</label
