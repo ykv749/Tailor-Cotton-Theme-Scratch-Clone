@@ -29,7 +29,9 @@
                 <input type="hidden" name="item_id" value="{{ item.id }}">
               </td>
               <td>{{ item.total_price | money }}</td>
-              <td><a href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a></td>
+              <td>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
+              </td>
             </tr>
           {% endfor %}
         </tbody>
@@ -41,7 +43,7 @@
         </tfoot>
       </table>
       <div class="common-padding">
-        <input type="submit" value="Update Cart">
+        <input class="button button--primary" type="submit" value="Update Cart">
         <a class="button button--primary" href="/checkout">Checkout</a>
       </div>
     {% else %}
