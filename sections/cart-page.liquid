@@ -1,6 +1,6 @@
 <div class="page-width">
   <div class="center">
-    {% assign shippping_amount = settings.shipping_amount | plus: 0 %}
+    {% assign shippping_amount = settings.shipping_amount | times: 100 %}
 
     {{ shippping_amount | money }}
     {% if cart.total_price>=shipping_amount %}
