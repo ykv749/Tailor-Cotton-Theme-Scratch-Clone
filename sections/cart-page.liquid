@@ -18,6 +18,7 @@
                   <div class="h5">
                     <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
                   </div>
+                  <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
                 </td>
                 <td>{{ item.price | money }}</td>
                 <td>
