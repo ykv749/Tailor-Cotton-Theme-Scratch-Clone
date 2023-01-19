@@ -48,7 +48,10 @@
           <tfoot>
             <tr>
               <td colspan="3" class="h4">Total Amount</td>
-              <td>{{ cart.total_price | money }}</td>
+              <td>
+                <p>{{ cart.total_price | money }}</p>
+                <s class="op6">{{ cart.original_total_price | money }}</s>
+              </td>
             </tr>
           </tfoot>
         </table>
