@@ -363,4 +363,4 @@ const checkfunc = function (id) {
   } else {
     temp.style.display = "none";
   }
-};
+}
