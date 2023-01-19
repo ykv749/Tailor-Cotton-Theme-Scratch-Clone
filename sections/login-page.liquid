@@ -33,7 +33,7 @@
   {% endif %}
 </div>
 
-<div class="page-width">
+<div class="page-width recover-password">
   {% form 'recover_customer_password' %}
     {{ form.errors | default_errors }}
     <div class="page-width recover hidden" id="recover">
@@ -82,8 +82,8 @@
 {% endstyle %}
 
 {% javascript %}
-  let login = document.querySelector(".login");
-  let recover = document.querySelector(".recover");
+  let login = document.querySelector(".login-page");
+  let recover = document.querySelector(".recover-password");
   let login_redirect = document.querySelector(".account-login-redirect");
   let recover_redirect = document.querySelector(".account-recover-redirect")
 
