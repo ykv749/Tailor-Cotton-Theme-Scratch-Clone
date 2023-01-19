@@ -11,12 +11,6 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
-        "type": "number",
-        "id": "shipping_amount",
-        "label": "Shipping Amount",
-        "default": 200000
-      },
-      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.primary_colors.label"
       },
@@ -149,6 +143,12 @@
         "default": 10,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
+      },
+      {
+        "type": "number",
+        "id": "shipping_amount",
+        "label": "Shipping Amount",
+        "default": 200000
       }
     ]
   },
