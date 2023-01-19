@@ -2,6 +2,10 @@
   <div class="center">
     {% assign shippping_amount = settings.shipping_amount %}
 
+    {% if cart.total_price>=shipping_amount %}
+      
+    {% endif %}
+
     <form action="{{ routes.cart_url }}" method="post">
       {% if cart.item_count > 0 %}
         <table>
