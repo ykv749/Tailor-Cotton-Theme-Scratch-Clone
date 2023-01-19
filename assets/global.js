@@ -355,8 +355,8 @@ function fc2() {
 }
 
 function checkfunc(id) {
-  console.warn(type(id));
-  console.warn((id));
+  console.log(typeof(id));
+  console.log((id));
   // var temp = document.getElementById("id");
   // if (temp.style.display === "none") {
   //   temp.style.display = "block";
