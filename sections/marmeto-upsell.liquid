@@ -42,7 +42,7 @@
       <div class="grid grid--2-col grid--4-col-desktop">
         {%- for handle in upsell_handles -%}
           {%- assign product = all_products[handle] -%}
-          <div class="grid__item" id="checkbox--{{ product.id }}">
+          <div class="grid__item checkbox--{{ product.id }}">
             {% render 'image', class: '', mobileSrc: product.featured_image, desktopSrc: product.featured_image %}
           </div>
         {%- endfor -%}
