@@ -377,20 +377,19 @@ Shopify.addItem = function (variant_id, quantity, callback) {
 
 function upsell__addtocart() {
   let formData = {
-    items: []
+    items: [],
   };
 
   for (let i = 0; i < 4; ++i) {
     let temp = "product--" + `${i}`;
     let k = document.getElementById(temp);
-    if(k.checked){
-      k=k.value;
+    if (k.checked) {
+      k = k.value;
       console.log(k);
       k = parseInt(k.split("--")[1]);
-      k={ id: k, quantity: 1 };
+      k = { id: k, quantity: 1 };
       formData.items.push(k);
     }
-    
   }
 
   console.log(formData);
@@ -402,10 +401,33 @@ function upsell__addtocart() {
     },
     body: JSON.stringify(formData),
   })
-  .then((response) => {
-    return response.json();
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
+
+const checkfunc = function (id) {
+  console.log(typeof id);
+  console.log(id);
+  var temp = document.getElementById(id);
+  if (temp.style.display === "none") {
+    temp.style.display = "block";
+  } else {
+    temp.style.display = "none";
+  }
+
+  let cost = 0;
+  for (let i = 0; i < 4; ++i) {
+    let temp = "product--" + `${i}`;
+    console.log(temp);
+    let k = document.getElementById(temp).value;
+
+    k = k.split("--")[1];
+    console.log(k);
+    k = all_products[44333956202798];
+    console.log(k);
+  }
+};
