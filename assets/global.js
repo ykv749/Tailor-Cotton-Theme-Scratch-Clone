@@ -364,3 +364,29 @@ const checkfunc = function (id) {
     temp.style.display = "none";
   }
 }
+
+Shopify.addItem = function(variant_id, quantity, callback) {
+  var quantity = quantity || 1;
+  var params = {
+    type: 'POST',
+    url: '/cart/add.js',
+    data: 'quantity=' + quantity + '&id=' + variant_id,
+    dataType: 'json',
+    success: function(line_item) { 
+      if ((typeof callback) === 'function') {
+        callback(line_item);
+      }
+      else {
+        Shopify.onItemAdded(line_item);
+      }
+    },
+    error: function(XMLHttpRequest, textStatus) {
+      Shopify.onError(XMLHttpRequest, textStatus);
+    }
+  };
+  jQuery.ajax(params);
+};
+
+function upsell__addtocart() {
+  
+}
