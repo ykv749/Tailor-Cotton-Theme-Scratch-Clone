@@ -391,6 +391,7 @@ function upsell__addtocart() {
     let temp = "product--" + `${i}`;
     let k = document.getElementById(temp).value;
     console.log(k);
-    Shopify.addItem();
+    k=k.split('--')[1];
+    Shopify.addItem(k,1,'okay');
   }
 }
