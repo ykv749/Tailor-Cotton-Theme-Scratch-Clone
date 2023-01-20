@@ -376,11 +376,29 @@ Shopify.addItem = function (variant_id, quantity, callback) {
 };
 
 function upsell__addtocart() {
+  let formData = {
+    items: []
+  };
+
   for (let i = 0; i < 4; ++i) {
     let temp = "product--" + `${i}`;
     let k = document.getElementById(temp).value;
     console.log(k);
-    k=k.split('--')[1];
-    Shopify.addItem(k,1,'okay');
+    k = k.split("--")[1];
+    Shopify.addItem(k, 1, "okay");
   }
+
+  fetch(window.Shopify.routes.root + "cart/add.js", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+  .then((response) => {
+    return response.json();
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 }
