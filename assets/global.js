@@ -388,5 +388,7 @@ Shopify.addItem = function(variant_id, quantity, callback) {
 };
 
 function upsell__addtocart() {
-  
+  for(let i=0; i<4; ++i){
+    Shopify.addItem
+  }
 }
