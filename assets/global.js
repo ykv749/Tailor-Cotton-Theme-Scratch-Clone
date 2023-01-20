@@ -382,11 +382,15 @@ function upsell__addtocart() {
 
   for (let i = 0; i < 4; ++i) {
     let temp = "product--" + `${i}`;
-    let k = document.getElementById(temp).value;
-    console.log(k);
-    k = parseInt(k.split("--")[1]);
-    k={ id: k, quantity: 1 };
-    formData.items.push(k);
+    let k = document.getElementById(temp);
+    if(k.checked){
+      k=k.value;
+      console.log(k);
+      k = parseInt(k.split("--")[1]);
+      k={ id: k, quantity: 1 };
+      formData.items.push(k);
+    }
+    
   }
 
   console.log(formData);
