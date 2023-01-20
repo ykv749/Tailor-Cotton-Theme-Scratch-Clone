@@ -372,7 +372,7 @@ const checkfunc = function (id) {
     
     k=k.split('--')[1];
     console.log(k);
-    k=all_product[44333956202798];
+    k=all_products[44333956202798];
     console.log(k);
   }
   
