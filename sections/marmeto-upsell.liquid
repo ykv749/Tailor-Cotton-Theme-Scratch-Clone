@@ -127,6 +127,7 @@
 {% javascript %}
   
   
+  
   const checkfunc = function (id) {
     console.log(typeof id);
     console.log(id);
@@ -150,37 +151,6 @@
     }
     
   };
-
-  function upsell__addtocart() {
-  let formData = {
-    items: []
-  };
-
-  for (let i = 0; i < 4; ++i) {
-    let temp = "product--" + `${i}`;
-    let k = document.getElementById(temp).value;
-    console.log(k);
-    k = parseInt(k.split("--")[1]);
-    let k={ id: k, quantity: 1 };
-    formData.items.push(k);
-  }
-
-  console.log(formData);
-
-  fetch(window.Shopify.routes.root + "cart/add.js", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-  .then((response) => {
-    return response.json();
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
-}
 
 
 {% endjavascript %}
