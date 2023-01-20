@@ -56,7 +56,7 @@
             <div>
               <input
                 type="checkbox"
-                id="{{ product.id }}"
+                id="product--{{ forloop.index0 }}"
                 value="checkbox--{{ product.id }}"
                 checked
                 onchange="checkfunc(value)"
