@@ -389,6 +389,8 @@ function upsell__addtocart() {
     formData.items.push(k);
   }
 
+  console.log(formData);
+
   fetch(window.Shopify.routes.root + "cart/add.js", {
     method: "POST",
     headers: {
