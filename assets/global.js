@@ -385,6 +385,7 @@ function upsell__addtocart() {
     let k = document.getElementById(temp).value;
     console.log(k);
     k = k.split("--")[1];
+    let k={ id: k, quantity: 1 };
     Shopify.addItem(k, 1, "okay");
   }
 
