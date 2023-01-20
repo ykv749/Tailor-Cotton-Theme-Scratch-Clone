@@ -127,27 +127,27 @@
 {% javascript %}
   
   const checkfunc = function (id) {
-  console.log(typeof id);
-  console.log(id);
-  var temp = document.getElementById(id);
-  if (temp.style.display === "none") {
-    temp.style.display = "block";
-  } else {
-    temp.style.display = "none";
-  }
-
-  let cost=0;
-  for (let i = 0; i < 4; ++i) {
-    let temp = "product--" + `${i}`;
-    console.log(temp);
-    let k = document.getElementById(temp).value;
-    
-    k=k.split('--')[1];
-    console.log(k);
-    k=all_products[44333956202798];
-    console.log(k);
-  }
+    console.log(typeof id);
+    console.log(id);
+    var temp = document.getElementById(id);
+    if (temp.style.display === "none") {
+      temp.style.display = "block";
+    } else {
+      temp.style.display = "none";
+    }
   
-};
+    let cost=0;
+    for (let i = 0; i < 4; ++i) {
+      let temp = "product--" + `${i}`;
+      console.log(temp);
+      let k = document.getElementById(temp).value;
+      
+      k=k.split('--')[1];
+      console.log(k);
+      k=all_products[44333956202798];
+      console.log(k);
+    }
+    
+  };
 
 {% endjavascript %}
