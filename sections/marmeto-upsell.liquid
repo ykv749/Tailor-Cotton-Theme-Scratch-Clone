@@ -48,6 +48,7 @@
         {%- endfor -%}
       </div>
 
+      {%- form 'product', product -%}
       {% assign temp = 0 %}
       <div class="upsell__checkboxes">
         {%- for handle in upsell_handles -%}
@@ -70,6 +71,7 @@
       </div>
       <div>{{ temp | money }}</div>
     </div>
+    {% endform %}
   </div>
 {%- endif -%}
 
