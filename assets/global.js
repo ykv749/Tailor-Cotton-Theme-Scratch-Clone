@@ -367,6 +367,7 @@ const checkfunc = function (id) {
   let cost=0;
   for (let i = 0; i < 4; ++i) {
     let temp = "product--" + `${i}`;
+    console.log(temp);
     let k = document.getElementById(temp).value;
   }
   
