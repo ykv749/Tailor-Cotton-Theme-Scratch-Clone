@@ -103,7 +103,14 @@
     "recently-viewed-products": {
       "type": "marmeto-recently-viewed-products",
       "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
         "title": "Recently viewed"
+      }
+    },
+    "b28a8283-0be5-4638-8411-334e74a1798f": {
+      "type": "bundled-products",
+      "settings": {
       }
     }
   },
@@ -111,6 +118,7 @@
     "main",
     "product-recommendations",
     "product-upsell",
-    "recently-viewed-products"
+    "recently-viewed-products",
+    "b28a8283-0be5-4638-8411-334e74a1798f"
   ]
 }
