@@ -369,6 +369,10 @@ const checkfunc = function (id) {
     let temp = "product--" + `${i}`;
     console.log(temp);
     let k = document.getElementById(temp).value;
+    
+    k=k.split('--')[1];
+    console.log(k);
+    
   }
   
 };
