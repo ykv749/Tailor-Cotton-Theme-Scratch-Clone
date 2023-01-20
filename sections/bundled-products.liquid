@@ -1,3 +1,12 @@
+{%- assign upsell_handles = '' -%}
+{%- for tag in product.tags -%}
+  {%- if tag contains 'upsell__' -%}
+    {%- assign u_handle = tag | split: '__' | last -%}
+    {%- assign upsell_handles = upsell_handles | append: u_handle | append: ',' -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign upsell_handles = upsell_handles | split: ',' | uniq -%}
+
 <div class="page-width">
   {%- form 'product', product -%}
     <div>
