@@ -363,6 +363,13 @@ const checkfunc = function (id) {
   } else {
     temp.style.display = "none";
   }
+
+  let cost=0;
+  for (let i = 0; i < 4; ++i) {
+    let temp = "product--" + `${i}`;
+    let k = document.getElementById(temp).value;
+  }
+  
 };
 
 Shopify.addItem = function (variant_id, quantity, callback) {
