@@ -37,44 +37,6 @@
         </div>
       {%- endfor -%}
     </div>
-
-    {%- form 'product', product -%}
-      <div>
-        <div class="grid grid--2-col grid--4-col-desktop">
-          {%- for handle in upsell_handles -%}
-            {%- assign product = all_products[handle].first_available_variant -%}
-            <div class="grid__item" id="checkbox--{{ product.id }}">
-              {% render 'image', class: '', mobileSrc: product.featured_image, desktopSrc: product.featured_image %}
-            </div>
-          {%- endfor -%}
-        </div>
-
-        {% assign temp = 0 %}
-        <div class="upsell__checkboxes">
-          {%- for handle in upsell_handles -%}
-            {%- assign product = all_products[handle].first_available_variant -%}
-            <div>
-              <input
-                type="checkbox"
-                id="product--{{ forloop.index0 }}"
-                value="checkbox--{{ product.id }}"
-                checked
-                onchange="checkfunc(value)"
-              >
-              <label for="{{ product.title | handleize }}--{{ forloop.index0 }}">
-                {{ product.title }}
-                {{ product.price | money -}}</label
-              ><br>
-              {% assign temp = temp | plus: product.price %}
-            </div>
-          {%- endfor -%}
-          <div>
-<!--             <div class="upsell__price">{{ temp | money }}</div> -->
-            <div><a class="button button--primary" onclick="upsell__addtocart()" href="{{ routes.cart_url }}">Add to Cart</a></div>
-          </div>
-        </div>
-      </div>
-    {% endform %}
   </div>
 {%- endif -%}
 
@@ -123,5 +85,4 @@
 {% endschema %}
 
 {% javascript %}
-
 {% endjavascript %}
