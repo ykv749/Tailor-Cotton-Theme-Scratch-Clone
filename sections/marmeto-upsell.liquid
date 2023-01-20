@@ -43,7 +43,7 @@
         <div class="grid grid--2-col grid--4-col-desktop">
           {%- for handle in upsell_handles -%}
             {%- assign product = all_products[handle] -%}
-            <div class="grid__item" id="checkbox--{{ product.id }}">
+            <div class="grid__item" id="checkbox--{{ variant.id }}">
               {% render 'image', class: '', mobileSrc: product.featured_image, desktopSrc: product.featured_image %}
             </div>
           {%- endfor -%}
@@ -57,7 +57,7 @@
               <input
                 type="checkbox"
                 id="product--{{ forloop.index0 }}"
-                value="checkbox--{{ product.id }}"
+                value="checkbox--{{ variant.id }}"
                 checked
                 onchange="checkfunc(value)"
               >
