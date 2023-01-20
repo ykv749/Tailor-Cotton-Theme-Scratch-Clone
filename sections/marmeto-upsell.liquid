@@ -46,6 +46,9 @@
             <div class="grid__item" id="checkbox--{{ product.id }}">
               {% render 'image', class: '', mobileSrc: product.featured_image, desktopSrc: product.featured_image %}
             </div>
+            {% unless forloop.last %}
+              <div>+</div>
+            {% endunless %}
           {%- endfor -%}
         </div>
 
