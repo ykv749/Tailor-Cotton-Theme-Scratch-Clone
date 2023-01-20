@@ -40,10 +40,10 @@
 
     {%- form 'product', product -%}
       <div>
-        <div class="grid grid--2-col grid--4-col-desktop">
+        <div class="grid flex">
           {%- for handle in upsell_handles -%}
             {%- assign product = all_products[handle] -%}
-            <div class="grid__item" id="checkbox--{{ product.id }}">
+            <div class="flex__item" id="checkbox--{{ product.id }}">
               {% render 'image', class: '', mobileSrc: product.featured_image, desktopSrc: product.featured_image %}
               {% unless forloop.last %}
                 <div>+</div>
