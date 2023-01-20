@@ -363,32 +363,34 @@ const checkfunc = function (id) {
   } else {
     temp.style.display = "none";
   }
-}
+};
 
-Shopify.addItem = function(variant_id, quantity, callback) {
+Shopify.addItem = function (variant_id, quantity, callback) {
   var quantity = quantity || 1;
   var params = {
-    type: 'POST',
-    url: '/cart/add.js',
-    data: 'quantity=' + quantity + '&id=' + variant_id,
-    dataType: 'json',
-    success: function(line_item) { 
-      if ((typeof callback) === 'function') {
+    type: "POST",
+    url: "/cart/add.js",
+    data: "quantity=" + quantity + "&id=" + variant_id,
+    dataType: "json",
+    success: function (line_item) {
+      if (typeof callback === "function") {
         callback(line_item);
-      }
-      else {
+      } else {
         Shopify.onItemAdded(line_item);
       }
     },
-    error: function(XMLHttpRequest, textStatus) {
+    error: function (XMLHttpRequest, textStatus) {
       Shopify.onError(XMLHttpRequest, textStatus);
-    }
+    },
   };
   jQuery.ajax(params);
 };
 
 function upsell__addtocart() {
-  for(let i=0; i<4; ++i){
-    Shopify.addItem
+  for (let i = 0; i < 4; ++i) {
+    let temp = "product--" + `${i}`;
+    let k = document.getElementById(temp).value;
+    console.log(k);
+    Shopify.addItem();
   }
 }
