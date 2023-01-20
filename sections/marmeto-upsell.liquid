@@ -68,11 +68,11 @@
             {% assign temp = temp | plus: product.price %}
           </div>
         {%- endfor -%}
-      </div>
-      <div>{{ temp | money }}</div>
         <div>
       <button type="submit" class="button button--primary button--full-width card_button">Add to cart</button>
         </div>
+      </div>
+      <div>{{ temp | money }}</div>
         </div>
     {% endform %}
   </div>
