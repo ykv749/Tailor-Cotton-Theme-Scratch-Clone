@@ -69,8 +69,10 @@
             </div>
           {%- endfor -%}
           <div>
-            <div>{{ temp | money }}</div>
-            <button onclick="upsell__addtocart()" class="button button--primary button--full-width card_button">Add to cart</button>
+            <div class="">{{ temp | money }}</div>
+            <button onclick="upsell__addtocart()" class="button button--primary button--full-width card_button">
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
@@ -121,3 +123,6 @@
 ]
  }
 {% endschema %}
+
+{% javascript %}
+{% endjavascript %}
