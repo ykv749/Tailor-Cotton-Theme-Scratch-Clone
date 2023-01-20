@@ -385,7 +385,7 @@ function upsell__addtocart() {
     let k = document.getElementById(temp).value;
     console.log(k);
     k = parseInt(k.split("--")[1]);
-    let k={ id: k, quantity: 1 };
+    k={ id: k, quantity: 1 };
     formData.items.push(k);
   }
 
