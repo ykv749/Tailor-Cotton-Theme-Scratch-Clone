@@ -75,18 +75,7 @@
               {%- endif -%}
             </div>
           {%- when 'icon_with_text' -%}
-            {%- if product.metafields.custom.icon_with_text != blank -%}
-              {%- assign temp = product.metafields.custom.icon_with_text | split: '__' -%}
-              <div style="border: 1px solid black; margin-bottom: 1rem; display: inline-flex; padding:1rem;">
-                <div style="height: 2.5rem; width: 2.5rem; padding: 1px;">
-                  {%- assign k = temp | first | handleize -%}
-                  {%- render 'icon', icon: k -%}
-                </div>
-                <div style="padding: 1px;">
-                  {{ temp | last }}
-                </div>
-              </div>
-            {% endif %}
+            {%- render 'icon-with-text', product: product -%}
           {%- when 'quantity_selector' -%}
             <div class="product__quantity" {{ block.shopify_attributes }}>
               <label class="quantity__label" for="Quantity-{{ section.id }}"> Quantity </label>
