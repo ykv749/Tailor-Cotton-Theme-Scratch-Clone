@@ -110,6 +110,7 @@
     },
     "b28a8283-0be5-4638-8411-334e74a1798f": {
       "type": "bundled-products",
+      "disabled": true,
       "settings": {
       }
     }

@@ -75,6 +75,7 @@
     "c286823e-a65f-4271-8ec0-4172ce2e07ba": {
       "type": "richtext",
       "settings": {
+        "page_width": false,
         "padding_top": 32,
         "padding_bottom": 32,
         "bgr": "#ffffff",
@@ -180,6 +181,7 @@
     "a13d9d22-b9d3-403f-8165-47352a1cd156": {
       "type": "richtext",
       "settings": {
+        "page_width": false,
         "padding_top": 32,
         "padding_bottom": 32,
         "bgr": "#efede5",
