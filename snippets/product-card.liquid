@@ -93,7 +93,7 @@
         {%- endfor -%}
       {% endunless %}
 
-      {% render 'icon-with-text', product: product %}
+      {%- render 'icon-with-text', product: product -%}
 
       <div class="product-card__button center">
         {% if current_variant.available %}
