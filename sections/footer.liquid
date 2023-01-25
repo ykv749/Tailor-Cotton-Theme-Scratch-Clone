@@ -1,7 +1,13 @@
 <div class="page-width footer-section">
   <div class="grid grid--1-col grid--4-col-desktop">
     <div class="footer__logo grid__item">
-      {% render 'image', class: '', mobileSrc: section.settings.footer_logo, desktopSrc: section.settings.footer_logo %}
+      <a href="{{ routes.root_url }}">
+        {%- render 'image',
+          class: '',
+          mobileSrc: section.settings.footer_logo,
+          desktopSrc: section.settings.footer_logo
+        -%}
+      </a>
     </div>
 
     <div class="footer_menu grid__item">
