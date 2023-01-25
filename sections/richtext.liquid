@@ -6,6 +6,11 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .richtext--{{ section.id }} {
+    padding: {{ section.settings.paddings | append: 'px' }};
+    background: {{ section.settings.bgr }};
+  }
+
   .section--{{ section.id }} {
     color: {{ section.settings.text_color }}
   }
@@ -60,13 +65,6 @@
     </div>
   </div>
 </div>
-
-{% style %}
-  .richtext--{{ section.id }} {
-    padding: {{ section.settings.paddings | append: 'px' }};
-    background: {{ section.settings.bgr }};
-  }
-{% endstyle %}
 
 {% schema %}
 {
