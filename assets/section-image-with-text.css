@@ -1,0 +1,30 @@
+.image-with-text__paragraph {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.image-with-text__text-item__heading {
+  font-size: 4rem;
+}
+
+.image-with-text__text-wrapper {
+  max-width: 75%;
+  padding-top: 5rem;
+}
+
+.image-with-text__text-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-with-text__image-item-image {
+  top: 10%;
+  right: 10%;
+}
+
+@media only screen and (min-width: 990px) {
+  .image-with-text__text-item__heading {
+    font-size: 5rem;
+  }
+}
