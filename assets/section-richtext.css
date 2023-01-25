@@ -1,0 +1,28 @@
+.richtext__heading {
+  max-width: 100%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.richtext__subheading {
+  font-weight: 400;
+}
+
+.richtext__wrapper {
+  padding-bottom: 5rem;
+}
+
+.richtext__buttons {
+  justify-content: center;
+}
+
+@media only screen and (min-width: 990px) {
+  .richtext__subheading {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+  .richtext__heading {
+    max-width: 60%;
+    margin: auto;
+  }
+}
