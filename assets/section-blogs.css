@@ -1,0 +1,16 @@
+.blog {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 750px) {
+  .blog {
+    flex-direction: row;
+  }
+  .blog-featured-section {
+    border-right: 0.5rem solid grey;
+    width: 60%;
+  }
+  .blog-other-articles {
+    width: 40%;
+  }
+}
