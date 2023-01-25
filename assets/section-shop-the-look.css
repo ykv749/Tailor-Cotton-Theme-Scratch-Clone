@@ -1,62 +1,58 @@
 .shop_the_look-image_item img {
-    width: 100%;
-  }
+  width: 100%;
+}
 
-  .focal__product {
-    display: none;
-  }
-  .focal__point1 {
-    position: absolute;
-    top: {{ section.settings.horizontal1 | append: '%' }};
-    left: {{ section.settings.vertical1 | append: '%' }};
-    height: 25rem;
-    width: 15rem;
-  }
+.focal__product {
+  display: none;
+}
+.focal__point1 {
+  position: absolute;
+  height: 25rem;
+  width: 15rem;
+}
 
-  .focal__point2 {
-    position: absolute;
-    top: {{ section.settings.horizontal2 | append: '%' }};
-    left: {{ section.settings.vertical2 | append: '%' }};
-    height: 25rem;
-    width: 15rem;
-  }
+.focal__point2 {
+  position: absolute;
+  height: 25rem;
+  width: 15rem;
+}
 
-  .shop-the-look__hotspot-viewinlist {
-    position: absolute;
-    bottom: 2.78%;
-    left: 2.78%;
-    display: flex;
-    column-gap: 0.6875rem;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 14px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    border-radius: 50px;
-    appearance: none;
-    color: white;
-  }
+.shop-the-look__hotspot-viewinlist {
+  position: absolute;
+  bottom: 2.78%;
+  left: 2.78%;
+  display: flex;
+  column-gap: 0.6875rem;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 50px;
+  appearance: none;
+  color: white;
+}
 
-  .shop-the-look__hotspot-viewinlist:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-color: black;
-    border-radius: inherit;
-    opacity: .7;
-  }
+.shop-the-look__hotspot-viewinlist:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: black;
+  border-radius: inherit;
+  opacity: 0.7;
+}
 
-  .shop-the-look__hotspot-viewinlist svg {
-    position: relative;
-    display: block;
-    width: auto;
-    height: 1rem;
-  }
+.shop-the-look__hotspot-viewinlist svg {
+  position: relative;
+  display: block;
+  width: auto;
+  height: 1rem;
+}
 
-  .shop-the-look__hotspot-viewinlist span {
-    position: relative;
-  }
+.shop-the-look__hotspot-viewinlist span {
+  position: relative;
+}
