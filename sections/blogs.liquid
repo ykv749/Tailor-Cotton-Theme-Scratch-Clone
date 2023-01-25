@@ -17,6 +17,8 @@
   </div>
 {% endcomment %}
 
+{{ 'section-blogs.css' | asset_url | stylesheet_tag }}
+
 <div class="page-width relative flex blog section-{{ section.id }}-padding section--{{ section.id }}">
   <div class="blog-featured-section">
     <div class="h2 common-padding">{{ section.settings.heading }}</div>
