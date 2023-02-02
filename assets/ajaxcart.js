@@ -1,3 +1,4 @@
+debugger;
 class AjaxCart extends HTMLElement {
   constructor() {
     super();
