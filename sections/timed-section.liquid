@@ -1,13 +1,13 @@
 {% liquid 
 
   assign product=section.settings.product
-  assign give_time=product.metafields.custom.test
+  assign give_time=product.metafields.custom.test | date: '%s'
 
   assign today='now' | date: '%s'
   
   assign disp=false
 
-  if today<=give_time
+  if today<give_time
     assign disp=true
   endif
   
