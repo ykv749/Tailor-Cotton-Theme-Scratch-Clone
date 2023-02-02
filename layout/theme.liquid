@@ -114,7 +114,7 @@
   <body class="template-{{ template.name }}">
     
     {%- if settings.cart_drawer -%}
-      {%- render 'cart-drawer' -%}
+      {%- section 'ajaxcart' -%}
     {%- endif  -%}
     
     {% section 'announcement-bar' %}
