@@ -112,11 +112,10 @@
   </head>
 
   <body class="template-{{ template.name }}">
-    
-    {% if settings.cart_drawer %}
-        {% section 'ajaxcart' %}
-    {% endif %}
-    
+    {%- if settings.cart_drawer -%}
+      {%- section 'ajaxcart' -%}
+    {%- endif -%}
+
     {% section 'announcement-bar' %}
     {% section 'header' %}
 
