@@ -2,7 +2,7 @@
 
   assign product=section.settings.product
   assign time=product.metafields.custom.test
-  assign date=time | split: 'T'
+  assign date=time | split: ':' | first
 
 %}
 
