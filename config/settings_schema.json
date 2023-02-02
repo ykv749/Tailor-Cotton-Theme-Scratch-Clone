@@ -148,7 +148,7 @@
         "type": "number",
         "id": "shipping_amount",
         "label": "Shipping Amount",
-        "default": 200000
+        "default": 50000
       }
     ]
   },
@@ -223,6 +223,12 @@
         "id": "favicon",
         "label": "t:settings_schema.favicon.settings.favicon.label",
         "info": "t:settings_schema.favicon.settings.favicon.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawar",
+        "label": "Enable Cart Drawer",
+        "default": true
       }
     ]
   }
