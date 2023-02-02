@@ -1,10 +1,9 @@
 {% liquid 
 
   assign product=section.settings.product
-  assign time=product.metafields.custom.test
-  assign date=time | split: 'T' | first
+  assign give_time=product.metafields.custom.test
 
-  assign today='now' | date: '%Y-%m-%d'
+  assign today='now' | date: '%s'
   
   assign disp=false
 
