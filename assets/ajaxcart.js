@@ -1,10 +1,9 @@
 class AjaxCart extends HTMLElement {
+  debugger;
   constructor() {
     super();
     this.initClickEvents();
   }
-
-  debugger;
 
   initClickEvents() {
     this.previousElementSibling.addEventListener('click', this.close);
