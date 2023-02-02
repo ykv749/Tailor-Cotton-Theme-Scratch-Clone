@@ -90,7 +90,10 @@
       <div class="flex__item header-icon">
         <a
           class="clrbl"
-          href="{{ routes.cart_url }}" onclick="cart_drawer()"
+          {% if settings.cart_drawer %}
+            href="{{ routes.cart_url }}"
+          {% endif %}
+          onclick="cart_drawer()"
         >
           {% render 'icon', icon: 'cart' %}
         </a>
