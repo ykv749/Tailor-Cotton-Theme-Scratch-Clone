@@ -33,7 +33,7 @@
                 onclick="this.closest('cart-drawer').close()"
                 aria-label="{{ 'accessibility.close' | t }}"
               >
-                {% render 'icon', icon: 'icon-close' %} 
+                {% render 'icon', icon: 'icon-close' %}
               </button>
               <a href="{{ routes.all_products_collection_url }}" class="button">
                 {{ 'general.continue_shopping' | t }}
@@ -62,7 +62,7 @@
           onclick="this.closest('cart-drawer').close()"
           aria-label="{{ 'accessibility.close' | t }}"
         >
-          {% render 'icon', icon: 'icon-close' %} 
+          {% render 'icon', icon: 'icon-close' %}
         </button>
       </div>
       <cart-drawer-items
@@ -99,10 +99,10 @@
                         scope="col"
                         role="columnheader"
                       >
-                        {{ 'sections.cart.headings.total' | t }}
+                        Total
                       </th>
                       <th id="CartDrawer-ColumnQuantity" role="columnheader">
-                        <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
+                        <span class="visually-hidden">Quantity</span>
                       </th>
                     </tr>
                   </thead>
