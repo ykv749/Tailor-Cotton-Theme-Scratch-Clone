@@ -7,15 +7,15 @@
   
   assign disp=false
 
-  if today<give_time
+  if today<=give_time
     assign disp=true
   endif
   
 %}
 
 {% if disp %}
-<div>
-  <h4>Timed Section</h4>
+<div class="page-width">
+  
 </div>
 {% endif %}
 
