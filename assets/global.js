@@ -437,11 +437,11 @@ function cart_drawer() {
   let temp=document.getElementById('cart-drawer').classList;
   if(temp.length!=2){
     document.body.classList.add('overflow-hidden');
-    this.closest('.ajax-cart').classList.add('is--open');
+    temp.classList.add('is--open');
   }
   else {
     document.body.classList.remove('overflow-hidden');
-    this.closest('.ajax-cart').classList.remove('is--open');
+    temp.classList.remove('is--open');
   }
   
 }
