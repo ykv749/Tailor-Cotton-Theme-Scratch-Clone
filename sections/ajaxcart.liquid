@@ -1,0 +1,77 @@
+<div class="ajax-cart is--open">
+  <div class="ajax-cart__overlay"></div>
+  <ajax-cart class="ajax-cart__container">
+    <ajaxcart-header>
+      <div class="h2">Shopping cart {% if cart.item_count > 0 %}({{cart.item_count}}){% endif %}</div>
+      <button type="button" class="ajax-cart__close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>            
+        </svg>
+      </button>
+    </ajaxcart-header>
+
+    {% if cart.item_count == 0 %}
+      <ajaxcart-empty class="ajax-cart__empty">
+        <div class="h3">Your cart looks little empty!</div>
+      </ajaxcart-empty>
+    {% else %}
+      <ajaxcart-body>
+        <form action="{{ routes.cart_url }}" id="AjaxcartForm" class="cart__contents ajax-cart__form" method="post">
+          <div class="ajax-cart__items">
+            {% for item in cart.items %}
+              <ajaxcart-item class="ajaxcart-item" data-item-key="{{ item.key }}">
+                <div class="ajaxcart-item__media">
+                  <a href="{{ item.url }}" class="ajaxcart-item__link">
+                    <img class="ajaxcart-item__image"
+                      src="{{ item.image | image_url: width: 300 }}"
+                      alt="{{ item.image.alt | escape }}"
+                      loading="lazy"
+                      width="150"
+                      height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                    >
+                  </a>
+                </div>
+                <div class="ajaxcart-item__info">
+                  <a href="{{ item.url }}" class="ajaxcart-item__title">{{ item.product.title | escape }}</a>
+                </div>
+              </ajaxcart-item>
+            {% endfor %}
+          </div>
+        </form>
+      </ajaxcart-body>
+  
+      <ajaxcart-footer>
+        <div class="ajax-cart__subtotal">
+          <div class="h4 ajax-cart__subtotal--label">Subtotal</div>
+          <div class="ajax-cart__subtotal--value">{{ cart.total_price | money_with_currency }}</div>
+        </div>
+  
+        <button type="submit" id="AjaxcartSubmit" class="button button--full-width ajax-cart__submit" name="checkout" form="AjaxcartForm">
+          Checkout
+        </button>
+  
+        <div class="ajax-cart__taxnote center">
+          {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+            Tax included. <a href="{{ shop.shipping_policy.url }}">Shipping</a> calculated at checkout.
+          {%- elsif cart.taxes_included -%}
+            Tax included and shipping calculated at checkout
+          {%- elsif shop.shipping_policy.body != blank -%}
+            Taxes and <a href="{{ shop.shipping_policy.url }}">shipping</a> calculated at checkout
+          {%- else -%}
+            Taxes and shipping calculated at checkout
+          {%- endif -%}
+        </div>
+      </ajaxcart-footer>
+    {% endif %}
+  </ajax-cart>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Ajaxcart",
+    "tag": "section",
+    "settings": []
+  }
+{% endschema %}
