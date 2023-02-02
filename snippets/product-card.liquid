@@ -97,7 +97,17 @@
 
       <div class="product-card__button center">
         {% if current_variant.available %}
-          <button type="submit" class="button button--primary button--full-width card_button">Add to cart</button>
+          <button
+            {% unless settings.cart_drawer %}
+              type="submit"
+            {% endunless %}
+            class="button button--primary button--full-width card_button"
+            {% if settings.cart_drawer %}
+              onclick="cart_drawer()"
+            {% endif %}
+          >
+            Add to cart
+          </button>
         {% else %}
           <button type="button" class="button button--primary button--full-width card_button" disabled>Soldout</button>
         {% endif %}
