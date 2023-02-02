@@ -112,9 +112,11 @@
   </head>
 
   <body class="template-{{ template.name }}">
+    
     {%- if settings.cart_drawer -%}
       {%- render 'cart-drawer' -%}
     {%- endif  -%}
+    
     {% section 'announcement-bar' %}
     {% section 'header' %}
 
