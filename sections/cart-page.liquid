@@ -1,147 +1,152 @@
-<div class="page-width">
-  <div class="cart__wrapper center">
-    {% if cart.item_count > 0 %}
-      {% liquid
-        assign temp_shippping_amount = settings.shipping_amount | plus: 0
-        assign temp_cart_price = cart.total_price | divided_by: 100
-      %}
-      {% if temp_cart_price >= temp_shippping_amount %}
-        <div class="h5 common-padding">Congratulations, 🤩 You got Free Shipping</div>
-      {% else %}
-        {% assign remaining = temp_shippping_amount | minus: temp_cart_price %}
-        <div class="h5 common-padding">You're Just {{ remaining | times: 100 | money }} away from Free Shipping.</div>
-      {% endif %}
-    {% endif %}
-
-    <form action="{{ routes.cart_url }}" method="post">
+{% comment %}
+  <div class="page-width">
+    <div class="cart__wrapper center">
       {% if cart.item_count > 0 %}
-        <table>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in cart.items %}
+        {% liquid
+          assign temp_shippping_amount = settings.shipping_amount | plus: 0
+          assign temp_cart_price = cart.total_price | divided_by: 100
+        %}
+        {% if temp_cart_price >= temp_shippping_amount %}
+          <div class="h5 common-padding">Congratulations, 🤩 You got Free Shipping</div>
+        {% else %}
+          {% assign remaining = temp_shippping_amount | minus: temp_cart_price %}
+          <div class="h5 common-padding">You're Just {{ remaining | times: 100 | money }} away from Free Shipping.</div>
+        {% endif %}
+      {% endif %}
+
+      <form action="{{ routes.cart_url }}" method="post">
+        {% if cart.item_count > 0 %}
+          <table>
+            <thead>
               <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in cart.items %}
+                <tr>
+                  <td>
+                    <div class="h5 cart-item-title">
+                      <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
+                    </div>
+                    <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
+                    <div class="cart-item-product-title">
+                      <a class="tn clrbl" href="{{ item.url }}">{{ item.product.title }}</a>
+                    </div>
+                  </td>
+                  <td>
+                    <p>{{ item.price | money }}</p>
+                    <s class="op6">{{ item.original_price | money }}</s>
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name="updates[]"
+                      value="{{ item.quantity }}"
+                      min="0"
+                      max="{{ item.product.variants.first.inventory_quantity }}"
+                    >
+                    <input type="hidden" name="item_id" value="{{ item.id }}">
+                  </td>
+                  <td>
+                    {% assign temp = item.price | times: item.quantity %}
+                    <p>{{ temp | money }}</p>
+                    <s class="op6">{{ item.final_line_price | money }}</s>
+                  </td>
+                  <td>
+                    <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" class="h4">Total Amount</td>
                 <td>
-                  <div class="h5 cart-item-title">
-                    <a class="tn clrbl" href="{{ item.url }}">{{ item.title }}</a>
-                  </div>
-                  <div><img src="{{ item.image | img_url: 'medium'  }}"></div>
-                  <div class="cart-item-product-title">
-                    <a class="tn clrbl" href="{{ item.url }}">{{ item.product.title }}</a>
-                  </div>
-                </td>
-                <td>
-                  <p>{{ item.price | money }}</p>
-                  <s class="op6">{{ item.original_price | money }}</s>
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name="updates[]"
-                    value="{{ item.quantity }}"
-                    min="0"
-                    max="{{ item.product.variants.first.inventory_quantity }}"
-                  >
-                  <input type="hidden" name="item_id" value="{{ item.id }}">
-                </td>
-                <td>
-                  {% assign temp = item.price | times: item.quantity %}
-                  <p>{{ temp | money }}</p>
-                  <s class="op6">{{ item.final_line_price | money }}</s>
-                </td>
-                <td>
-                  <a href="/cart/change?line={{ forloop.index }}&quantity=0">{% render 'icon', icon: 'trash' %}</a>
+                  <p>{{ cart.total_price | money }}</p>
+                  <s class="op6">{{ cart.original_total_price | money }}</s>
                 </td>
               </tr>
-            {% endfor %}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3" class="h4">Total Amount</td>
-              <td>
-                <p>{{ cart.total_price | money }}</p>
-                <s class="op6">{{ cart.original_total_price | money }}</s>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-        <div class="common-padding">
+            </tfoot>
+          </table>
           <div class="common-padding">
-            <div class="h5">Add a Note to the Cart</div>
-            <textarea class="cart-note" style="resize: none;" name="note"></textarea>
+            <div class="common-padding">
+              <div class="h5">Add a Note to the Cart</div>
+              <textarea class="cart-note" style="resize: none;" name="note"></textarea>
+            </div>
+            <input class="button button--primary" type="submit" value="Update Cart">
+            <a class="button button--primary" href="/checkout">Checkout</a>
           </div>
-          <input class="button button--primary" type="submit" value="Update Cart">
-          <a class="button button--primary" href="/checkout">Checkout</a>
-        </div>
-      {% else %}
-        <div class="common-padding">
-          <div class="h4 common-padding">Your cart is empty.</div>
-          <a class="button button--primary common-padding" href="/">Continue shopping</a>
-        </div>
-      {% endif %}
-    </form>
+        {% else %}
+          <div class="common-padding">
+            <div class="h4 common-padding">Your cart is empty.</div>
+            <a class="button button--primary common-padding" href="/">Continue shopping</a>
+          </div>
+        {% endif %}
+      </form>
+    </div>
   </div>
-</div>
-{% schema %}
-{
-  "name": "Section name",
-  "settings": []
-}
-{% endschema %}
-
-{% style %}
-  
-  .cart-item-title {
-    display: none;
+  {% schema %}
+  {
+    "name": "Section name",
+    "settings": []
   }
+  {% endschema %}
 
-  .cart__wrapper {
-    overflow: auto;
-  }
+  {% style %}
 
-  @media only screen and (min-width: 990px) {
     .cart-item-title {
-      display: block;
-    }
-    .cart-item-product-title {
       display: none;
     }
-  }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
-  input[type="number"] {
-    width: 50px;
-  }
+    .cart__wrapper {
+      overflow: auto;
+    }
 
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .cart-note {
-    height: 10rem;
-    width: 30rem;
-  }
-{% endstyle %}
+    @media only screen and (min-width: 990px) {
+      .cart-item-title {
+        display: block;
+      }
+      .cart-item-product-title {
+        display: none;
+      }
+    }
 
-{% javascript %}
-{% endjavascript %}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .cart-note {
+      height: 10rem;
+      width: 30rem;
+    }
+  {% endstyle %}
+
+  {% javascript %}
+  {% endjavascript %}
+{% endcomment %}
+
+{% layout none %}
+{% section 'ajaxcart' %}
