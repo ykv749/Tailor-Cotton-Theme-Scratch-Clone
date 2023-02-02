@@ -1,8 +1,15 @@
+{% liquid 
+
+  assign product=section.settings.product
+  assign time=product.metafields
+
+%}
 {% if disp %}
 <div>
   <h4>Timed Section</h4>
 </div>
 {% endif %}
+{{ time }}
 
 {% schema %}
 {
