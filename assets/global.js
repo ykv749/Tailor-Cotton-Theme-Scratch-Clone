@@ -438,10 +438,10 @@ function cart_drawer() {
   let temp=document.getElementById('cart_drawer').classList;
   
   if(temp.length!=2){
-    temp.classList.add('is--open');
+    temp.add('is--open');
   }
   else {
-    temp.classList.remove('is--open');
+    temp.remove('is--open');
   }
   
 }
