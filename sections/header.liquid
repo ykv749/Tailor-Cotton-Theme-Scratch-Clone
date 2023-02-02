@@ -88,24 +88,9 @@
         </a>
       </div>
       <div class="flex__item header-icon">
-<!--         <a class="clrbl" href="{{ routes.cart_url }}">
+        <a class="clrbl" href="{{ routes.cart_url }}" id="cart-icon-bubble">
           {% render 'icon', icon: 'cart' %}
-        </a> -->
-        
-        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-        {%- liquid
-          if cart == empty
-            render 'icon-cart-empty'
-          else
-            render 'icon-cart'
-          endif
-        -%}
-        <span class="visually-hidden">Cart</span>
-        {%- if cart != empty -%}
-          {% render 'icon', icon: 'cart' %}
-        {%- endif -%}
-      </a>
-        
+        </a>
       </div>
     </div>
   </div>
