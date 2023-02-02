@@ -435,7 +435,7 @@ const checkfunc = function (id) {
 function cart_drawer() {
 
   debugger;
-  let temp=document.getElementById('cart-drawer').classList;
+  let temp=document.getElementById('cart_drawer').classList;
   
   if(temp.length!=2){
     document.body.classList.add('overflow-hidden');
