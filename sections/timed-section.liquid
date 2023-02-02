@@ -4,6 +4,10 @@
   assign time=product.metafields.custom.test
   assign date=time | split: 'T' | first
 
+  assign today='now' | date
+  
+  assign disp=false
+  
 %}
 
 {% if disp %}
@@ -13,6 +17,7 @@
 {% endif %}
 <div>{{ time }}</div>
 <div>{{ date }}</div>
+<div>{{ today }}</div>
 
 {% schema %}
 {
