@@ -19,7 +19,7 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "cart_drawer": true,
+    "cart_drawer": false,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
