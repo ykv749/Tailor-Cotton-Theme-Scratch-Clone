@@ -33,7 +33,7 @@
                 onclick="this.closest('cart-drawer').close()"
                 aria-label="{{ 'accessibility.close' | t }}"
               >
-                {% render 'icon-close' %}
+                {% render 'icon', icon: 'icon-close' %} 
               </button>
               <a href="{{ routes.all_products_collection_url }}" class="button">
                 {{ 'general.continue_shopping' | t }}
@@ -62,7 +62,7 @@
           onclick="this.closest('cart-drawer').close()"
           aria-label="{{ 'accessibility.close' | t }}"
         >
-          {% render 'icon-close' %}
+          {% render 'icon', icon: 'icon-close' %} 
         </button>
       </div>
       <cart-drawer-items
