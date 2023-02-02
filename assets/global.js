@@ -431,3 +431,17 @@ const checkfunc = function (id) {
     console.log(k);
   }
 };
+
+function cart_drawer() {
+
+  let temp=document.getElementById('cart-drawer').classList;
+  if(temp[1]==="is--open"){
+    document.body.classList.add('overflow-hidden');
+    this.closest('.ajax-cart').classList.add('is--open');
+  }
+  else {
+    document.body.classList.remove('overflow-hidden');
+    this.closest('.ajax-cart').classList.remove('is--open');
+  }
+  
+}
