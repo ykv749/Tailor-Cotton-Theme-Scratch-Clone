@@ -7,6 +7,10 @@
   assign today='now' | date: '%Y-%m-%d'
   
   assign disp=false
+
+  if today<=date
+    assign disp=true
+  endif
   
 %}
 
