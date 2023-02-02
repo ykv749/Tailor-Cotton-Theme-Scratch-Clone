@@ -12,7 +12,7 @@
   }
 </style>
 
-<cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}" style="background: grey;">
+<cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}" >
   <div id="CartDrawer" class="cart-drawer">
     <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div>
     <div
@@ -21,6 +21,7 @@
       aria-modal="true"
       aria-label="{{ 'sections.cart.title' }}"
       tabindex="-1"
+      style="background: grey;"
     >
       {%- if cart == empty -%}
         <div class="drawer__inner-empty">
