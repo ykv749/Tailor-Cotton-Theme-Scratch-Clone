@@ -2,6 +2,7 @@
 
   assign product=section.settings.product
   assign time=product.metafields.custom.test
+  assign date=time | split: 'T'
 
 %}
 
@@ -10,7 +11,7 @@
   <h4>Timed Section</h4>
 </div>
 {% endif %}
-{{ time }}
+{{ date }}
 
 {% schema %}
 {
