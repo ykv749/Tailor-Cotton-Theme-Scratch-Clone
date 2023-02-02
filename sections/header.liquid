@@ -88,7 +88,16 @@
         </a>
       </div>
       <div class="flex__item header-icon">
-        <a class="clrbl" href="{{ routes.cart_url }}">
+        <a
+          class="clrbl"
+          href="
+            {% if settings.cart_drawer %}
+            {{ routes.cart_url }}
+            {% else %}
+              /cart?view=ajaxcart
+            {% endif %}
+          "
+        >
           {% render 'icon', icon: 'cart' %}
         </a>
       </div>
