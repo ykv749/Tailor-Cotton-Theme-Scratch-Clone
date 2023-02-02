@@ -438,11 +438,9 @@ function cart_drawer() {
   let temp=document.getElementById('cart_drawer').classList;
   
   if(temp.length!=2){
-    document.body.classList.add('overflow-hidden');
     temp.classList.add('is--open');
   }
   else {
-    document.body.classList.remove('overflow-hidden');
     temp.classList.remove('is--open');
   }
   
