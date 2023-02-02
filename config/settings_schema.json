@@ -226,7 +226,7 @@
       },
       {
         "type": "checkbox",
-        "id": "cart_drawar",
+        "id": "cart_drawer",
         "label": "Enable Cart Drawer",
         "default": true
       }
