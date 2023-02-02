@@ -4,7 +4,7 @@
   assign time=product.metafields.custom.test
   assign date=time | split: 'T' | first
 
-  assign today='now' | date
+  assign today='now' | date: '%y%m%d'
   
   assign disp=false
   
