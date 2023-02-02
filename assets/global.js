@@ -434,7 +434,9 @@ const checkfunc = function (id) {
 
 function cart_drawer() {
 
+  debugger;
   let temp=document.getElementById('cart-drawer').classList;
+  
   if(temp.length!=2){
     document.body.classList.add('overflow-hidden');
     temp.classList.add('is--open');
