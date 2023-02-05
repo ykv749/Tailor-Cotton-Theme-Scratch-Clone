@@ -30,7 +30,7 @@
       <ajaxcart-body>
         <div class="shipping-bar">
           {% liquid
-            assign free_shipping = settings.free_shipping | times: 1
+            assign free_shipping = settings.shipping_amount | times: 1
             assign cart_price = cart.total_price | divided_by: 100
             assign change = free_shipping | minus: cart_price
             assign perc_change = 100
