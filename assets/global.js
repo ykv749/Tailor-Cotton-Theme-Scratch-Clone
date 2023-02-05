@@ -434,7 +434,6 @@ const checkfunc = function (id) {
 
 function cart_drawer() {
 
-  debugger;
   let temp=document.getElementById('cart_drawer').classList;
   
   if(temp.length!=2){
