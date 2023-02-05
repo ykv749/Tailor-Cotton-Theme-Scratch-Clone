@@ -1,5 +1,27 @@
 {{ 'snippet-product-card.css' | asset_url | stylesheet_tag }}
 
+<script>
+  if(location.pathname == '/cart') {
+    document.location.href = '/?return_link=cart';
+  }
+
+  if(location.href.indexOf('return_link=cart') != -1) {
+    setTimeout(function() {
+      let temp=document.getElementById('cart_drawer').classList;
+  
+      if(temp.length!=2){
+        temp.add('is--open');
+      }
+      else {
+        temp.remove('is--open');
+      }
+    }, 1000);
+
+    let currentPageUrl = window.location.href.replace('?return_link=cart', '');
+    window.history.replaceState({}, document.title, currentPageUrl);
+  }
+</script>
+
 <product-card class="product-card" data-handle="{{ product.handle }}">
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
