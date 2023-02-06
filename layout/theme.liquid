@@ -18,6 +18,28 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
+    <script>
+        if(location.pathname == '/cart') {
+          document.location.href = '/?return_link=cart';
+        }
+      
+        if(location.href.indexOf('return_link=cart') != -1) {
+          setTimeout(function() {
+            let temp=document.getElementById('cart_drawer').classList;
+        
+            if(temp.length!=2){
+              temp.add('is--open');
+            }
+            else {
+              temp.remove('is--open');
+            }
+          }, 1000);
+      
+          let currentPageUrl = window.location.href.replace('?return_link=cart', '');
+          window.history.replaceState({}, document.title, currentPageUrl);
+        }
+      </script>
+
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
