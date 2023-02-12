@@ -206,12 +206,6 @@
         "padding_top": 32,
         "padding_bottom": 32
       }
-    },
-    "85c2e417-dd42-477c-8871-8b7b7aa5e70c": {
-      "type": "timed-section",
-      "settings": {
-        "product": "allegra-top"
-      }
     }
   },
   "order": [
@@ -226,7 +220,6 @@
     "f38de45e-6569-47c3-8c5d-055dfd6961de",
     "a55d20ff-ed34-474c-8332-fa36d8cfeb21",
     "a13d9d22-b9d3-403f-8165-47352a1cd156",
-    "dc2ee33e-bb2e-4540-822a-2fccfbc84e1f",
-    "85c2e417-dd42-477c-8871-8b7b7aa5e70c"
+    "dc2ee33e-bb2e-4540-822a-2fccfbc84e1f"
   ]
 }
