@@ -1,12 +1,127 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+
+{% if product.metafields.custom.table_text_1 != blank and product.metafields.custom.table_subtext_1 != blank and product.metafields.custom.table_heading_cross != blank   and product.metafields.custom.table_heading_tick != blank %}
+  
+<style>
+    .table-description{
+      margin: 0 auto;
+      width: 90%;
   }
+    
+    .table__heading {
+    padding: 20px 10px; 
+  }
+  .indus-difference-table .table-wrapper{
+    border: 1px solid #ffffff;
+    margin-top: 20px;
+    color: #ffffff;
+    border-radius: 2rem;
+   
+  }
+  .indus-difference-table tr th:nth-child(2){
+    background-color: #E0FF11;
+    color: black;
+  }
+  .indus-difference-table tr th:nth-child(3){
+   color: #ffffff;
+   border-bottom: 1px solid #ffffff ;
+  }
+  .indus-difference-table{
+    padding: 30px 0;
+  }
+  .indus-difference-table table{
+    width: 100% 
+  }
+  .table-detail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .indus-difference-table tr td:nth-child(2) {
+      border-left: 1px solid #E0FF11 ;
+      border-right: 1px solid #E0FF11 ;
+   
+  }
+  .indus-difference-table tr:last-child td:nth-child(2){
+      border-bottom: 1px solid #E0FF11 ;
+  }
+  .indus-difference-table tr{
+    border-bottom: 1px solid #ffffff ;
+  }
+  .indus-difference-table tr:nth-child(1){
+    border: none;
+  }
+  .indus-difference-table tr:last-child{
+    border: none;
+  }
+  </style>
+
+<div class="indus-difference-table" style="background-color:{{ section.settings.bg_color }};">
+<div class="container">
+  <div class="section-heading text-center">
+    {%- if section.settings.section_heading != blank -%}
+    <h3 class=" text-light section-title text-center mb-16 bsm:mb-8 h1">{{ section.settings.section_heading }} </h3>
+    {%- endif -%}   
+</div>
+<div class="table-wrapper">
+  <table class="table-content">
+    <tr>
+      <th></th>
+      {% if product.metafields.custom.table_heading_tick != blank %}
+      <th class="[width:20%]" ><div class="table__heading text-left [font-size:1.6rem] bsm:[font-size:1.4rem]">{{ product.metafields.custom.table_heading_tick }}</div></th>
+      {% endif %}
+      {% if product.metafields.custom.table_heading_cross != blank %}
+      <th class="[width:20%]"><div class="table__heading text-left [font-size:1.6rem] bsm:[font-size:1.4rem]">{{ product.metafields.custom.table_heading_cross }}</div></th>
+      {% endif %}
+    </tr>
+    {%- for i in (1..10)-%}
+      {% assign text = "table_text_" | append: i  %}
+      {% assign subtext = "table_subtext_" | append: i  %}
+     
+      {% if product.metafields.custom[text].value.text != blank and product.metafields.custom[subtext].value.text != blank %}
+    <tr>
+      <td>
+       <div class="table-description px-28 py-8 bsm:px-8">
+        {% if product.metafields.custom[text].value.text != blank %} <div class="table-detail-text [font-size:2rem] bsm:[font-size:1.4rem] font-bold mb-3"> {{ product.metafields.custom[text].value.text }} </div> {% endif %}
+        {% if product.metafields.custom[subtext].value.text %} <div class="table-detail-subtext [font-size:1.4rem]"> {{ product.metafields.custom[subtext].value.text }} </div> {% endif %}
+       </div>
+      </td>
+      <td>
+        {% if product.metafields.custom[text].value.text != blank %} <div class="table-detail-icon"> {% render 'indus-diff-tick' %} </div> {% endif %}
+      </td>
+      <td>
+        {% if product.metafields.custom[subtext].value.text != blank %} <div class="table-detail-icon"> {% render 'indus-diff-cross' %} </div> {% endif %}
+      </td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+</table>
+</div>
+</div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+   "name": "difference table",
+  "settings": [
+   {
+    "type": "text",
+    "id": "section_heading",
+    "label": "Section Heading",
+    "default": "INDUS DIFFERENCE TABLE"
+   },
+  {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Background Color",
+    "default": "#f1f1f1"
+  }
+  ],
+ "presets": [
+    {
+        "category": "difference",
+        "name":"difference table"
+    }
+ ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
