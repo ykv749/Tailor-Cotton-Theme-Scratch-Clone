@@ -301,7 +301,7 @@ document.querySelectorAll(".description-tabs__heading").forEach((heading) => {
 /*----------------------------------------------
   Drift Zoom
 ----------------------------------------------*/
-var driftImgs = document.querySelectorAll(".product__media img[data-zoom]");
+var driftImgs = document.querySelectorAll(".product-media img[data-zoom]");
 driftImgs.forEach((img) => {
   new Drift(img, {
     paneContainer: img.nextElementSibling,
