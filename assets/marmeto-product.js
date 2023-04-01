@@ -267,3 +267,7 @@ document.querySelectorAll('.description-tabs__heading').forEach((heading) => {
     document.getElementById(tabId).classList.add('is--active');
   });
 });
+
+/*----------------------------------------------
+  Drift Zoom
+----------------------------------------------*/
