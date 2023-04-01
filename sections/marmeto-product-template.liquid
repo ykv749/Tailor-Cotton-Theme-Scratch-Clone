@@ -1,6 +1,8 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
+{{ 'zoom-effect.css' | asset_url | stylesheet_tag }}
+
 <script src="{{ 'marmeto-product.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'zoom-effect.js' | asset_url }}" preload></script>
 
