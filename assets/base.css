@@ -851,6 +851,9 @@ https://flickity.metafizzy.co
   .image-overlay-text .flex__item {
     width: 100%;
   }
+  .image-overlay-text__text-item {
+    width: 100%;
+  }
 }
 
 .footer-icon {
