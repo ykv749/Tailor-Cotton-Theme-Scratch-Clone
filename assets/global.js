@@ -444,3 +444,5 @@ function cart_drawer() {
   }
   
 }
+
+console.log('Testing');
