@@ -371,8 +371,3 @@ input[type="number"]::-webkit-outer-spin-button {
   flex-wrap: wrap;
   margin: 0 -5px;
 }
-
-
-.product__media-item.is-selected img {
-  max-width: unset!important;
-}
