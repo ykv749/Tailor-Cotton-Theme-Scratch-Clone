@@ -379,6 +379,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .zoom-pane {
-  position: absolute;
+  position: fixed;
   right: 0;
 }
