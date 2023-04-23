@@ -373,6 +373,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 
-.product__media-item.is-selected {
+.product__media-item.is-selected img {
   max-width: unset!important;
 }
