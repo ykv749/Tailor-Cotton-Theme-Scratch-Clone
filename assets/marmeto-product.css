@@ -7,7 +7,6 @@
 }
 
 .product-media img {
-  max-width: unset !important;
   object-fit: contain !important;
 }
 
@@ -371,4 +370,9 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -5px;
+}
+
+
+.product__media-item.is-selected {
+  max-width: unset!important;
 }
