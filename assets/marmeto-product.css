@@ -374,13 +374,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Drift Zoom */
 .zoom-pane img {
-  object-fit: unset!important;
-  max-width: unset!important;
+  object-fit: unset !important;
+  max-width: unset !important;
 }
 
 .zoom-pane {
   position: fixed;
   right: 0;
-  height: 10rem;
-  width: 10rem;
+  height: 734px;
+  width: 734px;
 }
