@@ -384,3 +384,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 734px;
   width: 734px;
 } */
+
+.drift-zoom-pane img {
+  max-width: unset !important;
+}
