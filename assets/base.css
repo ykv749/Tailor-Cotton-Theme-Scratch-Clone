@@ -1263,8 +1263,3 @@ cart-drawer-items::-webkit-scrollbar-thumb {
 cart-drawer-items::-webkit-scrollbar-track-piece {
   margin-top: 31px;
 }
-
-.zoom-pane img {
-  object-fit: unset!important;
-  max-width: unset!important;
-}
