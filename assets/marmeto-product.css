@@ -381,4 +381,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .zoom-pane {
   position: fixed;
   right: 0;
+  height: 10rem;
+  width: 10rem;
 }
