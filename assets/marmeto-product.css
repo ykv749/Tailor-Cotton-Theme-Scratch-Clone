@@ -377,3 +377,8 @@ input[type="number"]::-webkit-outer-spin-button {
   object-fit: unset!important;
   max-width: unset!important;
 }
+
+.zoom-pane {
+  position: absolute;
+  right: 0;
+}
