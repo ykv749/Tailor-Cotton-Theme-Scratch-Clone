@@ -305,7 +305,7 @@ var driftImgs = document.querySelectorAll(".product-media img[data-zoom]");
 driftImgs.forEach((img) => {
   new Drift(img, {
     paneContainer: img.nextElementSibling,
-    inlinePane: true,
+    inlinePane: false,
     zoomFactor: 2,
   });
 });
