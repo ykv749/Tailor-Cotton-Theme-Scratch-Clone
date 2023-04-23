@@ -7,6 +7,7 @@
 }
 
 .product-media img {
+  max-width: unset !important;
   object-fit: contain !important;
 }
 
