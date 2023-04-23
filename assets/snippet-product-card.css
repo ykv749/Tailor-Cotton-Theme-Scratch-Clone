@@ -72,7 +72,7 @@
 .product-card__link {
   display: block;
   margin-bottom: 1.5rem;
-  transition: width 2s, height 4s;
+  transition: 1s;
 }
 
 .product-card__link:hover {
