@@ -373,7 +373,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Drift Zoom */
-.zoom-pane img {
+/* .zoom-pane img {
   object-fit: unset !important;
   max-width: unset !important;
 }
@@ -383,4 +383,4 @@ input[type="number"]::-webkit-outer-spin-button {
   right: 0;
   height: 734px;
   width: 734px;
-}
+} */
