@@ -13,7 +13,7 @@
     >
       {%- for media in product.media -%}
         <div class="product__media-item">
-          {% render 'product-media', media: media, class: 'media media--portrait' %}
+          {% render 'product-media', media: media, class: 'media media--portrait', zoom_enable: true %}
         </div>
       {%- endfor -%}
     </div>
@@ -29,7 +29,7 @@
             padding: 1.5rem;
           "
         >
-          {% render 'product-media', media: media, class: 'media media--portrait' %}
+          {% render 'product-media', media: media, class: 'media media--portrait', zoom_enable: false %}
         </div>
       {%- endfor -%}
     </div>
